@@ -51,7 +51,9 @@ export default function Index() {
       if (load_data.matches.matches[match].status.toUpperCase() == "FINISHED") {
         results.push([load_data.matches.matches[match], load_data.matches.matches[match].utcDate]);
       } else {
-        fixtures.push([load_data.matches.matches[match], load_data.matches.matches[match].utcDate]);
+        if (new Date() < new Date(load_data.matches.matches[match].utcDate)) {
+          fixtures.push([load_data.matches.matches[match], load_data.matches.matches[match].utcDate]);
+        }
       }
   }
   fixtures = fixtures.sort(sortFunctionLow);
