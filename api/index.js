@@ -200,7 +200,7 @@ __export(routes_exports, {
   default: () => Index,
   loader: () => loader
 });
-var import_auth0_react5 = require("@auth0/auth0-react"), import_node2 = require("@remix-run/node"), import_react4 = require("@remix-run/react"), tf = __toESM(require("@tensorflow/tfjs"));
+var import_auth0_react5 = require("@auth0/auth0-react"), import_node = require("@remix-run/node"), import_react3 = require("@remix-run/react"), tf = __toESM(require("@tensorflow/tfjs"));
 
 // app/comps/loginbutton.tsx
 var import_auth0_react2 = require("@auth0/auth0-react"), import_jsx_dev_runtime4 = require("react/jsx-dev-runtime"), LoginButton = () => {
@@ -213,22 +213,19 @@ var import_auth0_react2 = require("@auth0/auth0-react"), import_jsx_dev_runtime4
 }, loginbutton_default = LoginButton;
 
 // app/comps/logoutbutton.tsx
-var import_auth0_react3 = require("@auth0/auth0-react"), import_node = require("@remix-run/node"), import_react3 = require("@remix-run/react"), import_jsx_dev_runtime5 = require("react/jsx-dev-runtime");
-var LogoutButton = () => {
-  let load_data = (0, import_react3.useLoaderData)(), { logout } = (0, import_auth0_react3.useAuth0)();
+var import_auth0_react3 = require("@auth0/auth0-react"), import_jsx_dev_runtime5 = require("react/jsx-dev-runtime"), LogoutButton = () => {
+  let { logout } = (0, import_auth0_react3.useAuth0)();
   return /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)(
     "button",
     {
-      onClick: () => logout({
-        returnTo: load_data.url
-      }),
+      onClick: () => logout(),
       children: "Log Out"
     },
     void 0,
     !1,
     {
       fileName: "app/comps/logoutbutton.tsx",
-      lineNumber: 17,
+      lineNumber: 8,
       columnNumber: 5
     },
     this
@@ -259,7 +256,7 @@ async function loader() {
       "X-Auth-Token": (_a = process.env.PUBLIC_FOOTBALL_API_KEY) == null ? void 0 : _a.toString()
     }
   }, fantasty_stats_return = await (await fetch("https://fantasy.premierleague.com/api/bootstrap-static/")).json(), standings_return = await (await fetch("https://api.football-data.org/v4/competitions/PL/standings", options)).json(), matches_return = await (await fetch("https://api.football-data.org/v4/competitions/PL/matches", options)).json();
-  return (0, import_node2.json)({ date: new Date(), matches: matches_return, fantasy: fantasty_stats_return, standings: standings_return });
+  return (0, import_node.json)({ date: new Date(), matches: matches_return, fantasy: fantasty_stats_return, standings: standings_return });
 }
 function sortFunctionHigh(a, b) {
   return new Date(a[1]) === new Date(b[1]) ? 0 : new Date(a[1]) > new Date(b[1]) ? -1 : 1;
@@ -268,7 +265,7 @@ function sortFunctionLow(a, b) {
   return new Date(a[1]) === new Date(b[1]) ? 0 : new Date(a[1]) < new Date(b[1]) ? -1 : 1;
 }
 function Index() {
-  let load_data = (0, import_react4.useLoaderData)();
+  let load_data = (0, import_react3.useLoaderData)();
   console.log(load_data);
   let fixtures = [], results = [];
   for (let match in load_data.matches.matches)
@@ -603,7 +600,7 @@ function Index() {
 }
 
 // server-assets-manifest:@remix-run/dev/assets-manifest
-var assets_manifest_default = { version: "88388553", entry: { module: "/build/entry.client-ISIUEW5G.js", imports: ["/build/_shared/chunk-X4MTOD3Z.js", "/build/_shared/chunk-3UV2KWN7.js", "/build/_shared/chunk-56THQXCK.js"] }, routes: { root: { id: "root", parentId: void 0, path: "", index: void 0, caseSensitive: void 0, module: "/build/root-75TSDURW.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/index": { id: "routes/index", parentId: "root", path: void 0, index: !0, caseSensitive: void 0, module: "/build/routes/index-HQXWCLHH.js", imports: ["/build/_shared/chunk-5RS5G2K2.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/profile": { id: "routes/profile", parentId: "root", path: "profile", index: void 0, caseSensitive: void 0, module: "/build/routes/profile-LDJYA6OG.js", imports: ["/build/_shared/chunk-5RS5G2K2.js"], hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 } }, url: "/build/manifest-88388553.js" };
+var assets_manifest_default = { version: "82d33cde", entry: { module: "/build/entry.client-ISIUEW5G.js", imports: ["/build/_shared/chunk-X4MTOD3Z.js", "/build/_shared/chunk-3UV2KWN7.js", "/build/_shared/chunk-56THQXCK.js"] }, routes: { root: { id: "root", parentId: void 0, path: "", index: void 0, caseSensitive: void 0, module: "/build/root-75TSDURW.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/index": { id: "routes/index", parentId: "root", path: void 0, index: !0, caseSensitive: void 0, module: "/build/routes/index-UV5IZJUH.js", imports: ["/build/_shared/chunk-5RS5G2K2.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/profile": { id: "routes/profile", parentId: "root", path: "profile", index: void 0, caseSensitive: void 0, module: "/build/routes/profile-LDJYA6OG.js", imports: ["/build/_shared/chunk-5RS5G2K2.js"], hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 } }, url: "/build/manifest-82D33CDE.js" };
 
 // server-entry-module:@remix-run/dev/server-build
 var assetsBuildDirectory = "public\\build", future = { v2_meta: !1 }, publicPath = "/build/", entry = { module: entry_server_exports }, routes = {
