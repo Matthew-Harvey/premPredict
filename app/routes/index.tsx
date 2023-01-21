@@ -112,7 +112,7 @@ export default function Index() {
             </ul>
           </div>
           <div className="navbar-end">
-            <AuthenticationButton />
+              <AuthenticationButton />
           </div>
         </div>
         <div className="hero bg-base-200 my-4">

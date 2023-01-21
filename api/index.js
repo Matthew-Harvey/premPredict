@@ -408,7 +408,7 @@ function Index() {
       /* @__PURE__ */ (0, import_jsx_dev_runtime7.jsxDEV)("div", { className: "navbar-end", children: /* @__PURE__ */ (0, import_jsx_dev_runtime7.jsxDEV)(authbutton_default, {}, void 0, !1, {
         fileName: "app/routes/index.tsx",
         lineNumber: 115,
-        columnNumber: 13
+        columnNumber: 15
       }, this) }, void 0, !1, {
         fileName: "app/routes/index.tsx",
         lineNumber: 114,
@@ -603,7 +603,7 @@ function Index() {
 }
 
 // server-assets-manifest:@remix-run/dev/assets-manifest
-var assets_manifest_default = { version: "b0e323cd", entry: { module: "/build/entry.client-ISIUEW5G.js", imports: ["/build/_shared/chunk-X4MTOD3Z.js", "/build/_shared/chunk-3UV2KWN7.js", "/build/_shared/chunk-56THQXCK.js"] }, routes: { root: { id: "root", parentId: void 0, path: "", index: void 0, caseSensitive: void 0, module: "/build/root-75TSDURW.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/index": { id: "routes/index", parentId: "root", path: void 0, index: !0, caseSensitive: void 0, module: "/build/routes/index-N4PPETM7.js", imports: ["/build/_shared/chunk-5RS5G2K2.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/profile": { id: "routes/profile", parentId: "root", path: "profile", index: void 0, caseSensitive: void 0, module: "/build/routes/profile-LDJYA6OG.js", imports: ["/build/_shared/chunk-5RS5G2K2.js"], hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 } }, url: "/build/manifest-B0E323CD.js" };
+var assets_manifest_default = { version: "88388553", entry: { module: "/build/entry.client-ISIUEW5G.js", imports: ["/build/_shared/chunk-X4MTOD3Z.js", "/build/_shared/chunk-3UV2KWN7.js", "/build/_shared/chunk-56THQXCK.js"] }, routes: { root: { id: "root", parentId: void 0, path: "", index: void 0, caseSensitive: void 0, module: "/build/root-75TSDURW.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/index": { id: "routes/index", parentId: "root", path: void 0, index: !0, caseSensitive: void 0, module: "/build/routes/index-HQXWCLHH.js", imports: ["/build/_shared/chunk-5RS5G2K2.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/profile": { id: "routes/profile", parentId: "root", path: "profile", index: void 0, caseSensitive: void 0, module: "/build/routes/profile-LDJYA6OG.js", imports: ["/build/_shared/chunk-5RS5G2K2.js"], hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 } }, url: "/build/manifest-88388553.js" };
 
 // server-entry-module:@remix-run/dev/server-build
 var assetsBuildDirectory = "public\\build", future = { v2_meta: !1 }, publicPath = "/build/", entry = { module: entry_server_exports }, routes = {
