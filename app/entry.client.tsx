@@ -9,8 +9,8 @@ function hydrate() {
       document,
       <StrictMode>
         <Auth0Provider
-          domain="dev-4j7tglyit7xzyjkc.us.auth0.com"
-          clientId="U53lwy3s1Pk9bMNEo0NjoaQw75lvFyuu"
+          domain="prempredict.eu.auth0.com"
+          clientId="NZMInCJMbT9JJznZkoJCCDE1V5D0bjlB"
           authorizationParams={{
             redirect_uri: window.location.origin
           }}
