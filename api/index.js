@@ -59,7 +59,7 @@ __export(root_exports, {
 var import_react2 = require("@remix-run/react");
 
 // app/styles/app.css
-var app_default = "/build/_assets/app-C3E7SGFX.css";
+var app_default = "/build/_assets/app-ZFJXMA3Y.css";
 
 // app/root.tsx
 var import_jsx_dev_runtime2 = require("react/jsx-dev-runtime");
@@ -128,7 +128,20 @@ __export(routes_exports, {
   default: () => Index,
   loader: () => loader
 });
-var import_node = require("@remix-run/node"), import_react3 = require("@remix-run/react"), tf = __toESM(require("@tensorflow/tfjs")), import_jsx_dev_runtime3 = require("react/jsx-dev-runtime");
+var import_node = require("@remix-run/node"), import_react3 = require("@remix-run/react"), tf = __toESM(require("@tensorflow/tfjs"));
+
+// app/comps/loginbutton.tsx
+var import_auth0_react = require("@auth0/auth0-react"), import_jsx_dev_runtime3 = require("react/jsx-dev-runtime"), LoginButton = () => {
+  let { loginWithRedirect } = (0, import_auth0_react.useAuth0)();
+  return /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)("button", { onClick: () => loginWithRedirect(), children: "Log In" }, void 0, !1, {
+    fileName: "app/comps/loginbutton.tsx",
+    lineNumber: 7,
+    columnNumber: 10
+  }, this);
+}, loginbutton_default = LoginButton;
+
+// app/routes/index.tsx
+var import_jsx_dev_runtime4 = require("react/jsx-dev-runtime");
 async function loader() {
   var _a;
   let options = {
@@ -147,7 +160,7 @@ function sortFunctionLow(a, b) {
 }
 function Index() {
   let load_data = (0, import_react3.useLoaderData)();
-  console.log(load_data), console.log(new Date());
+  console.log(load_data);
   let fixtures = [], results = [];
   for (let match in load_data.matches.matches)
     load_data.matches.matches[match].status.toUpperCase() == "FINISHED" ? results.push([load_data.matches.matches[match], load_data.matches.matches[match].utcDate]) : new Date() < new Date(load_data.matches.matches[match].utcDate) && fixtures.push([load_data.matches.matches[match], load_data.matches.matches[match].utcDate]);
@@ -159,11 +172,11 @@ function Index() {
     let weights = tf.tensor([2.5, 0.01]);
     return data2.dot(weights);
   }, infectedPeople = [2, 5, 12, 30], infectedCountries = [1, 1, 4, 5], data = tf.tensor([infectedPeople[1], infectedCountries[1]]), prediction = predict(data);
-  return /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)(import_jsx_dev_runtime3.Fragment, { children: [
-    /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)("div", { className: "navbar sticky top-0 bg-white z-50", children: [
-      /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)("div", { className: "navbar-start", children: [
-        /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)("div", { className: "dropdown", children: [
-          /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)("label", { tabIndex: 0, className: "btn btn-ghost lg:hidden", children: /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)("svg", { xmlns: "http://www.w3.org/2000/svg", className: "h-5 w-5", fill: "none", viewBox: "0 0 24 24", stroke: "currentColor", children: /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)("path", { strokeLinecap: "round", strokeLinejoin: "round", strokeWidth: "2", d: "M4 6h16M4 12h8m-8 6h16" }, void 0, !1, {
+  return /* @__PURE__ */ (0, import_jsx_dev_runtime4.jsxDEV)(import_jsx_dev_runtime4.Fragment, { children: [
+    /* @__PURE__ */ (0, import_jsx_dev_runtime4.jsxDEV)("div", { className: "navbar sticky top-0 bg-white z-50", children: [
+      /* @__PURE__ */ (0, import_jsx_dev_runtime4.jsxDEV)("div", { className: "navbar-start", children: [
+        /* @__PURE__ */ (0, import_jsx_dev_runtime4.jsxDEV)("div", { className: "dropdown", children: [
+          /* @__PURE__ */ (0, import_jsx_dev_runtime4.jsxDEV)("label", { tabIndex: 0, className: "btn btn-ghost lg:hidden", children: /* @__PURE__ */ (0, import_jsx_dev_runtime4.jsxDEV)("svg", { xmlns: "http://www.w3.org/2000/svg", className: "h-5 w-5", fill: "none", viewBox: "0 0 24 24", stroke: "currentColor", children: /* @__PURE__ */ (0, import_jsx_dev_runtime4.jsxDEV)("path", { strokeLinecap: "round", strokeLinejoin: "round", strokeWidth: "2", d: "M4 6h16M4 12h8m-8 6h16" }, void 0, !1, {
             fileName: "app/routes/index.tsx",
             lineNumber: 84,
             columnNumber: 129
@@ -176,8 +189,8 @@ function Index() {
             lineNumber: 83,
             columnNumber: 13
           }, this),
-          /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)("ul", { tabIndex: 0, className: "menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52", children: [
-            /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)("li", { children: /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)("a", { href: "/predict", children: "Predict" }, void 0, !1, {
+          /* @__PURE__ */ (0, import_jsx_dev_runtime4.jsxDEV)("ul", { tabIndex: 0, className: "menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52", children: [
+            /* @__PURE__ */ (0, import_jsx_dev_runtime4.jsxDEV)("li", { children: /* @__PURE__ */ (0, import_jsx_dev_runtime4.jsxDEV)("a", { href: "/predict", children: "Predict" }, void 0, !1, {
               fileName: "app/routes/index.tsx",
               lineNumber: 87,
               columnNumber: 19
@@ -186,7 +199,7 @@ function Index() {
               lineNumber: 87,
               columnNumber: 15
             }, this),
-            /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)("li", { children: /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)("a", { href: "/fixtures", children: "Fixtures" }, void 0, !1, {
+            /* @__PURE__ */ (0, import_jsx_dev_runtime4.jsxDEV)("li", { children: /* @__PURE__ */ (0, import_jsx_dev_runtime4.jsxDEV)("a", { href: "/fixtures", children: "Fixtures" }, void 0, !1, {
               fileName: "app/routes/index.tsx",
               lineNumber: 88,
               columnNumber: 19
@@ -195,7 +208,7 @@ function Index() {
               lineNumber: 88,
               columnNumber: 15
             }, this),
-            /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)("li", { children: /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)("a", { href: "/results", children: "Results" }, void 0, !1, {
+            /* @__PURE__ */ (0, import_jsx_dev_runtime4.jsxDEV)("li", { children: /* @__PURE__ */ (0, import_jsx_dev_runtime4.jsxDEV)("a", { href: "/results", children: "Results" }, void 0, !1, {
               fileName: "app/routes/index.tsx",
               lineNumber: 89,
               columnNumber: 19
@@ -204,7 +217,7 @@ function Index() {
               lineNumber: 89,
               columnNumber: 15
             }, this),
-            /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)("li", { children: /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)("a", { href: "/table", children: "Table" }, void 0, !1, {
+            /* @__PURE__ */ (0, import_jsx_dev_runtime4.jsxDEV)("li", { children: /* @__PURE__ */ (0, import_jsx_dev_runtime4.jsxDEV)("a", { href: "/table", children: "Table" }, void 0, !1, {
               fileName: "app/routes/index.tsx",
               lineNumber: 90,
               columnNumber: 19
@@ -223,7 +236,7 @@ function Index() {
           lineNumber: 82,
           columnNumber: 11
         }, this),
-        /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)("a", { className: "btn btn-ghost normal-case text-xl", href: "/", children: "premPredict" }, void 0, !1, {
+        /* @__PURE__ */ (0, import_jsx_dev_runtime4.jsxDEV)("a", { className: "btn btn-ghost normal-case text-xl", href: "/", children: "premPredict" }, void 0, !1, {
           fileName: "app/routes/index.tsx",
           lineNumber: 93,
           columnNumber: 11
@@ -233,8 +246,8 @@ function Index() {
         lineNumber: 81,
         columnNumber: 9
       }, this),
-      /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)("div", { className: "navbar-center hidden lg:flex", children: /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)("ul", { className: "menu menu-horizontal px-1", children: [
-        /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)("li", { children: /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)("a", { href: "/predict", children: "Predict" }, void 0, !1, {
+      /* @__PURE__ */ (0, import_jsx_dev_runtime4.jsxDEV)("div", { className: "navbar-center hidden lg:flex", children: /* @__PURE__ */ (0, import_jsx_dev_runtime4.jsxDEV)("ul", { className: "menu menu-horizontal px-1", children: [
+        /* @__PURE__ */ (0, import_jsx_dev_runtime4.jsxDEV)("li", { children: /* @__PURE__ */ (0, import_jsx_dev_runtime4.jsxDEV)("a", { href: "/predict", children: "Predict" }, void 0, !1, {
           fileName: "app/routes/index.tsx",
           lineNumber: 97,
           columnNumber: 19
@@ -243,7 +256,7 @@ function Index() {
           lineNumber: 97,
           columnNumber: 15
         }, this),
-        /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)("li", { children: /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)("a", { href: "/fixtures", children: "Fixtures" }, void 0, !1, {
+        /* @__PURE__ */ (0, import_jsx_dev_runtime4.jsxDEV)("li", { children: /* @__PURE__ */ (0, import_jsx_dev_runtime4.jsxDEV)("a", { href: "/fixtures", children: "Fixtures" }, void 0, !1, {
           fileName: "app/routes/index.tsx",
           lineNumber: 98,
           columnNumber: 19
@@ -252,7 +265,7 @@ function Index() {
           lineNumber: 98,
           columnNumber: 15
         }, this),
-        /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)("li", { children: /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)("a", { href: "/results", children: "Results" }, void 0, !1, {
+        /* @__PURE__ */ (0, import_jsx_dev_runtime4.jsxDEV)("li", { children: /* @__PURE__ */ (0, import_jsx_dev_runtime4.jsxDEV)("a", { href: "/results", children: "Results" }, void 0, !1, {
           fileName: "app/routes/index.tsx",
           lineNumber: 99,
           columnNumber: 19
@@ -261,7 +274,7 @@ function Index() {
           lineNumber: 99,
           columnNumber: 15
         }, this),
-        /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)("li", { children: /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)("a", { href: "/table", children: "Table" }, void 0, !1, {
+        /* @__PURE__ */ (0, import_jsx_dev_runtime4.jsxDEV)("li", { children: /* @__PURE__ */ (0, import_jsx_dev_runtime4.jsxDEV)("a", { href: "/table", children: "Table" }, void 0, !1, {
           fileName: "app/routes/index.tsx",
           lineNumber: 100,
           columnNumber: 19
@@ -279,7 +292,7 @@ function Index() {
         lineNumber: 95,
         columnNumber: 9
       }, this),
-      /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)("div", { className: "navbar-end", children: /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)("a", { className: "btn", children: "Get started" }, void 0, !1, {
+      /* @__PURE__ */ (0, import_jsx_dev_runtime4.jsxDEV)("div", { className: "navbar-end", children: /* @__PURE__ */ (0, import_jsx_dev_runtime4.jsxDEV)(loginbutton_default, {}, void 0, !1, {
         fileName: "app/routes/index.tsx",
         lineNumber: 104,
         columnNumber: 11
@@ -293,13 +306,13 @@ function Index() {
       lineNumber: 80,
       columnNumber: 7
     }, this),
-    /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)("div", { className: "hero bg-base-200 my-4", children: /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)("div", { className: "hero-content text-center", children: /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)("div", { className: "max-w-md", children: [
-      /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)("img", { src: load_data.matches.competition.emblem, alt: "League Emblem", className: "m-auto justify-center w-40" }, void 0, !1, {
+    /* @__PURE__ */ (0, import_jsx_dev_runtime4.jsxDEV)("div", { className: "hero bg-base-200 my-4", children: /* @__PURE__ */ (0, import_jsx_dev_runtime4.jsxDEV)("div", { className: "hero-content text-center", children: /* @__PURE__ */ (0, import_jsx_dev_runtime4.jsxDEV)("div", { className: "max-w-md", children: [
+      /* @__PURE__ */ (0, import_jsx_dev_runtime4.jsxDEV)("img", { src: load_data.matches.competition.emblem, alt: "League Emblem", className: "m-auto justify-center w-40" }, void 0, !1, {
         fileName: "app/routes/index.tsx",
         lineNumber: 110,
         columnNumber: 13
       }, this),
-      /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)("h1", { className: "text-5xl font-bold", children: [
+      /* @__PURE__ */ (0, import_jsx_dev_runtime4.jsxDEV)("h1", { className: "text-5xl font-bold", children: [
         load_data.matches.competition.name,
         " Predictions"
       ] }, void 0, !0, {
@@ -307,7 +320,7 @@ function Index() {
         lineNumber: 111,
         columnNumber: 13
       }, this),
-      /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)("p", { className: "py-6", children: [
+      /* @__PURE__ */ (0, import_jsx_dev_runtime4.jsxDEV)("p", { className: "py-6", children: [
         "Predicted next day infections... infected people: ",
         data.dataSync()[0],
         ", infected countries ",
@@ -319,7 +332,7 @@ function Index() {
         lineNumber: 112,
         columnNumber: 13
       }, this),
-      /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)("button", { className: "btn btn-primary", children: "Get Started" }, void 0, !1, {
+      /* @__PURE__ */ (0, import_jsx_dev_runtime4.jsxDEV)(loginbutton_default, {}, void 0, !1, {
         fileName: "app/routes/index.tsx",
         lineNumber: 113,
         columnNumber: 13
@@ -337,21 +350,21 @@ function Index() {
       lineNumber: 107,
       columnNumber: 7
     }, this),
-    /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)("ul", { children: /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)("div", { className: "grid grid-cols-3", children: [
-      /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)("div", { children: [
-        /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)("p", { className: "m-auto justify-center text-2xl font-semibold text-center", children: "Results" }, void 0, !1, {
+    /* @__PURE__ */ (0, import_jsx_dev_runtime4.jsxDEV)("ul", { children: /* @__PURE__ */ (0, import_jsx_dev_runtime4.jsxDEV)("div", { className: "grid grid-cols-3", children: [
+      /* @__PURE__ */ (0, import_jsx_dev_runtime4.jsxDEV)("div", { children: [
+        /* @__PURE__ */ (0, import_jsx_dev_runtime4.jsxDEV)("p", { className: "m-auto justify-center text-2xl font-semibold text-center", children: "Results" }, void 0, !1, {
           fileName: "app/routes/index.tsx",
           lineNumber: 120,
           columnNumber: 13
         }, this),
-        results.map((result) => /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)("li", { className: "grid grid-cols-3 my-4 max-w-xl m-auto", children: [
-          /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)("img", { src: result[0].homeTeam.crest, alt: "Team Emblem", className: "m-auto justify-center w-10" }, void 0, !1, {
+        results.map((result) => /* @__PURE__ */ (0, import_jsx_dev_runtime4.jsxDEV)("li", { className: "grid grid-cols-3 my-4 max-w-xl m-auto", children: [
+          /* @__PURE__ */ (0, import_jsx_dev_runtime4.jsxDEV)("img", { src: result[0].homeTeam.crest, alt: "Team Emblem", className: "m-auto justify-center w-10" }, void 0, !1, {
             fileName: "app/routes/index.tsx",
             lineNumber: 123,
             columnNumber: 17
           }, this),
-          /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)("div", { children: [
-            /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)("p", { className: "m-auto justify-center text-center", children: [
+          /* @__PURE__ */ (0, import_jsx_dev_runtime4.jsxDEV)("div", { children: [
+            /* @__PURE__ */ (0, import_jsx_dev_runtime4.jsxDEV)("p", { className: "m-auto justify-center text-center", children: [
               result[0].score.fullTime.home,
               " - ",
               result[0].score.fullTime.away
@@ -360,7 +373,7 @@ function Index() {
               lineNumber: 125,
               columnNumber: 19
             }, this),
-            /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)("p", { className: "m-auto justify-center text-center", children: new Intl.DateTimeFormat("en-GB").format(new Date(result[1].toString())) }, void 0, !1, {
+            /* @__PURE__ */ (0, import_jsx_dev_runtime4.jsxDEV)("p", { className: "m-auto justify-center text-center", children: new Intl.DateTimeFormat("en-GB").format(new Date(result[1].toString())) }, void 0, !1, {
               fileName: "app/routes/index.tsx",
               lineNumber: 126,
               columnNumber: 19
@@ -370,7 +383,7 @@ function Index() {
             lineNumber: 124,
             columnNumber: 17
           }, this),
-          /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)("img", { src: result[0].awayTeam.crest, alt: "Team Emblem", className: "m-auto justify-center w-10" }, void 0, !1, {
+          /* @__PURE__ */ (0, import_jsx_dev_runtime4.jsxDEV)("img", { src: result[0].awayTeam.crest, alt: "Team Emblem", className: "m-auto justify-center w-10" }, void 0, !1, {
             fileName: "app/routes/index.tsx",
             lineNumber: 128,
             columnNumber: 17
@@ -385,25 +398,25 @@ function Index() {
         lineNumber: 119,
         columnNumber: 11
       }, this),
-      /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)("div", { children: [
-        /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)("p", { className: "m-auto justify-center text-2xl font-semibold text-center", children: "Fixtures" }, void 0, !1, {
+      /* @__PURE__ */ (0, import_jsx_dev_runtime4.jsxDEV)("div", { children: [
+        /* @__PURE__ */ (0, import_jsx_dev_runtime4.jsxDEV)("p", { className: "m-auto justify-center text-2xl font-semibold text-center", children: "Fixtures" }, void 0, !1, {
           fileName: "app/routes/index.tsx",
           lineNumber: 133,
           columnNumber: 13
         }, this),
-        fixtures.map((fixture) => /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)("li", { className: "grid grid-cols-3 my-4 max-w-xl m-auto", children: [
-          /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)("img", { src: fixture[0].homeTeam.crest, alt: "Team Emblem", className: "m-auto justify-center w-10" }, void 0, !1, {
+        fixtures.map((fixture) => /* @__PURE__ */ (0, import_jsx_dev_runtime4.jsxDEV)("li", { className: "grid grid-cols-3 my-4 max-w-xl m-auto", children: [
+          /* @__PURE__ */ (0, import_jsx_dev_runtime4.jsxDEV)("img", { src: fixture[0].homeTeam.crest, alt: "Team Emblem", className: "m-auto justify-center w-10" }, void 0, !1, {
             fileName: "app/routes/index.tsx",
             lineNumber: 136,
             columnNumber: 17
           }, this),
-          /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)("div", { children: [
-            /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)("p", { className: "m-auto justify-center text-center", children: " - " }, void 0, !1, {
+          /* @__PURE__ */ (0, import_jsx_dev_runtime4.jsxDEV)("div", { children: [
+            /* @__PURE__ */ (0, import_jsx_dev_runtime4.jsxDEV)("p", { className: "m-auto justify-center text-center", children: " - " }, void 0, !1, {
               fileName: "app/routes/index.tsx",
               lineNumber: 138,
               columnNumber: 19
             }, this),
-            /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)("p", { className: "m-auto justify-center text-center", children: new Intl.DateTimeFormat("en-GB").format(new Date(fixture[1].toString())) }, void 0, !1, {
+            /* @__PURE__ */ (0, import_jsx_dev_runtime4.jsxDEV)("p", { className: "m-auto justify-center text-center", children: new Intl.DateTimeFormat("en-GB").format(new Date(fixture[1].toString())) }, void 0, !1, {
               fileName: "app/routes/index.tsx",
               lineNumber: 139,
               columnNumber: 19
@@ -413,7 +426,7 @@ function Index() {
             lineNumber: 137,
             columnNumber: 17
           }, this),
-          /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)("img", { src: fixture[0].awayTeam.crest, alt: "Team Emblem", className: "m-auto justify-center w-10" }, void 0, !1, {
+          /* @__PURE__ */ (0, import_jsx_dev_runtime4.jsxDEV)("img", { src: fixture[0].awayTeam.crest, alt: "Team Emblem", className: "m-auto justify-center w-10" }, void 0, !1, {
             fileName: "app/routes/index.tsx",
             lineNumber: 141,
             columnNumber: 17
@@ -428,24 +441,24 @@ function Index() {
         lineNumber: 132,
         columnNumber: 11
       }, this),
-      /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)("div", { children: [
-        /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)("p", { className: "m-auto justify-center text-2xl font-semibold text-center", children: "Table" }, void 0, !1, {
+      /* @__PURE__ */ (0, import_jsx_dev_runtime4.jsxDEV)("div", { children: [
+        /* @__PURE__ */ (0, import_jsx_dev_runtime4.jsxDEV)("p", { className: "m-auto justify-center text-2xl font-semibold text-center", children: "Table" }, void 0, !1, {
           fileName: "app/routes/index.tsx",
           lineNumber: 146,
           columnNumber: 13
         }, this),
-        overall_table.map((pos) => /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)("li", { className: "grid grid-cols-3 my-4 max-w-xl m-auto", children: [
-          /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)("p", { className: "m-auto justify-center", children: pos.position }, void 0, !1, {
+        overall_table.map((pos) => /* @__PURE__ */ (0, import_jsx_dev_runtime4.jsxDEV)("li", { className: "grid grid-cols-3 my-4 max-w-xl m-auto", children: [
+          /* @__PURE__ */ (0, import_jsx_dev_runtime4.jsxDEV)("p", { className: "m-auto justify-center", children: pos.position }, void 0, !1, {
             fileName: "app/routes/index.tsx",
             lineNumber: 149,
             columnNumber: 17
           }, this),
-          /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)("img", { src: pos.team.crest, alt: "Team Emblem", className: "m-auto justify-center w-10" }, void 0, !1, {
+          /* @__PURE__ */ (0, import_jsx_dev_runtime4.jsxDEV)("img", { src: pos.team.crest, alt: "Team Emblem", className: "m-auto justify-center w-10" }, void 0, !1, {
             fileName: "app/routes/index.tsx",
             lineNumber: 150,
             columnNumber: 17
           }, this),
-          /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)("p", { className: "m-auto justify-center", children: pos.points }, void 0, !1, {
+          /* @__PURE__ */ (0, import_jsx_dev_runtime4.jsxDEV)("p", { className: "m-auto justify-center", children: pos.points }, void 0, !1, {
             fileName: "app/routes/index.tsx",
             lineNumber: 151,
             columnNumber: 17
@@ -477,7 +490,7 @@ function Index() {
 }
 
 // server-assets-manifest:@remix-run/dev/assets-manifest
-var assets_manifest_default = { version: "529ec0fe", entry: { module: "/build/entry.client-XCHZLFYJ.js", imports: ["/build/_shared/chunk-N4RF36SG.js"] }, routes: { root: { id: "root", parentId: void 0, path: "", index: void 0, caseSensitive: void 0, module: "/build/root-FEL63B3C.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/index": { id: "routes/index", parentId: "root", path: void 0, index: !0, caseSensitive: void 0, module: "/build/routes/index-IQ653IDB.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 } }, url: "/build/manifest-529EC0FE.js" };
+var assets_manifest_default = { version: "71d2219e", entry: { module: "/build/entry.client-QP5LIQXW.js", imports: ["/build/_shared/chunk-6RYFVNBJ.js", "/build/_shared/chunk-N4RF36SG.js"] }, routes: { root: { id: "root", parentId: void 0, path: "", index: void 0, caseSensitive: void 0, module: "/build/root-R6L4A4BE.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/index": { id: "routes/index", parentId: "root", path: void 0, index: !0, caseSensitive: void 0, module: "/build/routes/index-ECSCWXVB.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 } }, url: "/build/manifest-71D2219E.js" };
 
 // server-entry-module:@remix-run/dev/server-build
 var assetsBuildDirectory = "public\\build", future = { v2_meta: !1 }, publicPath = "/build/", entry = { module: entry_server_exports }, routes = {
