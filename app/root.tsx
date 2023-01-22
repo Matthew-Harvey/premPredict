@@ -1,3 +1,4 @@
+import { Auth0Provider } from "@auth0/auth0-react";
 import type { MetaFunction } from "@remix-run/node";
 import {
   Links,
@@ -28,10 +29,15 @@ export default function App() {
         <Links />
       </head>
       <body>
-        <Outlet />
-        <ScrollRestoration />
-        <Scripts />
-        <LiveReload />
+        <Auth0Provider
+          domain="prempredict.eu.auth0.com"
+          clientId="NZMInCJMbT9JJznZkoJCCDE1V5D0bjlB"
+        >
+          <Outlet />
+          <ScrollRestoration />
+          <Scripts />
+          <LiveReload />
+        </Auth0Provider>
       </body>
     </html>
   );

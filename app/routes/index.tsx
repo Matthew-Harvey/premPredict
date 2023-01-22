@@ -5,7 +5,9 @@ import { json } from "@remix-run/node"; // or cloudflare/deno
 import { useLoaderData } from "@remix-run/react";
 import * as tf from '@tensorflow/tfjs';
 import AuthenticationButton from "~/comps/authbutton";
-import Profile from "./profile";
+import LoginButton from "~/comps/loginbutton";
+import LogoutButton from "~/comps/logoutbutton";
+import User from "~/comps/profile";
 
 export async function loader() {
   const api_key = process.env.PUBLIC_FOOTBALL_API_KEY?.toString();
@@ -77,7 +79,7 @@ export default function Index() {
   const data = tf.tensor([infectedPeople[1], infectedCountries[1]])
   const prediction = predict(data)
 
-  const { isLoading } = useAuth0();
+  const { isLoading, isAuthenticated } = useAuth0();
 
   if (isLoading) {
 
@@ -112,7 +114,15 @@ export default function Index() {
             </ul>
           </div>
           <div className="navbar-end">
-              <AuthenticationButton />
+                    {!isAuthenticated ? (
+                  <div>
+                    <LoginButton />
+                  </div>
+                ) :
+                  <div>
+                      <LogoutButton />
+                      <User />
+                  </div>}
           </div>
         </div>
         <div className="hero bg-base-200 my-4">
@@ -121,7 +131,6 @@ export default function Index() {
               <img src={load_data.matches.competition.emblem} alt="League Emblem" className="m-auto justify-center w-40" />
               <h1 className="text-5xl font-bold">{load_data.matches.competition.name} Predictions</h1>
               <p className="py-6">Predicted next day infections... infected people: {data.dataSync()[0]}, infected countries {data.dataSync()[1]}, prediction: {prediction.dataSync()[0]}</p>
-              <Profile />
             </div>
           </div>
         </div>
