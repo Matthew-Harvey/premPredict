@@ -4,7 +4,6 @@ import { useAuth0 } from "@auth0/auth0-react";
 import { json } from "@remix-run/node"; // or cloudflare/deno
 import { useLoaderData } from "@remix-run/react";
 import * as tf from '@tensorflow/tfjs';
-import AuthenticationButton from "~/comps/authbutton";
 import LoginButton from "~/comps/loginbutton";
 import LogoutButton from "~/comps/logoutbutton";
 import User from "~/comps/profile";
@@ -79,7 +78,7 @@ export default function Index() {
   const data = tf.tensor([infectedPeople[1], infectedCountries[1]])
   const prediction = predict(data)
 
-  const { isLoading, isAuthenticated } = useAuth0();
+  const { isLoading, isAuthenticated, user } = useAuth0();
 
   if (isLoading) {
 
@@ -114,15 +113,16 @@ export default function Index() {
             </ul>
           </div>
           <div className="navbar-end">
-                    {!isAuthenticated ? (
+              {!isAuthenticated ? (
                   <div>
                     <LoginButton />
                   </div>
                 ) :
-                  <div>
+                  <div className="flex">
+                      <img src={user?.picture} alt="pfp" className="rounded-circle img-fluid profile-picture mb-3 mb-md-0 mr-2" />
                       <LogoutButton />
-                      <User />
-                  </div>}
+                  </div>
+              }
           </div>
         </div>
         <div className="hero bg-base-200 my-4">

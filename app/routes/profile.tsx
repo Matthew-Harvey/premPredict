@@ -1,10 +1,17 @@
 import React from 'react';
 
-import { useAuth0, withAuthenticationRequired } from '@auth0/auth0-react';
+import { useAuth0 } from '@auth0/auth0-react';
+import { json } from '@remix-run/node';
+import { useLoaderData } from '@remix-run/react';
 
-const Profile = () => {
-  const { user } = useAuth0();
+export async function loader() {
+  return json({});
+}
 
+export const Profile = () => {
+  const load_data = useLoaderData<typeof loader>();
+  const { user, isAuthenticated} = useAuth0();
+  
   return (
     <div>
       <div className="row align-items-center profile-header">
@@ -28,7 +35,3 @@ const Profile = () => {
     </div>
   );
 };
-
-export default withAuthenticationRequired(Profile, {
-  onRedirecting: () => <div>Loading...</div>,
-});
