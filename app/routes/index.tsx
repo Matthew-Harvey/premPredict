@@ -119,7 +119,7 @@ export default function Index() {
                   </div>
                 ) :
                   <div className="flex">
-                      <img src={user?.picture} alt="pfp" className="rounded-full m-2 w-14 h-14" />
+                      <img src={user?.picture} alt="pfp" className="rounded-full m-2 w-8 h-8" />
                       <LogoutButton />
                   </div>
               }
