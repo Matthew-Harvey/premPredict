@@ -59,7 +59,7 @@ __export(root_exports, {
 var import_auth0_react = require("@auth0/auth0-react"), import_react2 = require("@remix-run/react");
 
 // app/styles/app.css
-var app_default = "/build/_assets/app-BDRZUWNI.css";
+var app_default = "/build/_assets/app-VU73LNEK.css";
 
 // app/root.tsx
 var import_jsx_dev_runtime2 = require("react/jsx-dev-runtime");
@@ -403,7 +403,7 @@ function Index() {
         columnNumber: 11
       }, this),
       /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)("div", { className: "navbar-end", children: isAuthenticated ? /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)("div", { className: "flex", children: [
-        /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)("img", { src: user == null ? void 0 : user.picture, alt: "pfp", className: "rounded-circle img-fluid profile-picture mb-3 mb-md-0 mr-2" }, void 0, !1, {
+        /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)("img", { src: user == null ? void 0 : user.picture, alt: "pfp", className: "rounded-full m-2 w-14 h-14" }, void 0, !1, {
           fileName: "app/routes/index.tsx",
           lineNumber: 122,
           columnNumber: 23
@@ -614,7 +614,7 @@ function Index() {
 }
 
 // server-assets-manifest:@remix-run/dev/assets-manifest
-var assets_manifest_default = { version: "ce1f6cc2", entry: { module: "/build/entry.client-MTZEZ4NW.js", imports: ["/build/_shared/chunk-TF4HRXYO.js", "/build/_shared/chunk-4IYZMDEG.js"] }, routes: { root: { id: "root", parentId: void 0, path: "", index: void 0, caseSensitive: void 0, module: "/build/root-4IRKPPWO.js", imports: ["/build/_shared/chunk-FIBOST5T.js"], hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/index": { id: "routes/index", parentId: "root", path: void 0, index: !0, caseSensitive: void 0, module: "/build/routes/index-4SCRG3JR.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/profile": { id: "routes/profile", parentId: "root", path: "profile", index: void 0, caseSensitive: void 0, module: "/build/routes/profile-QPS4HCGO.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 } }, url: "/build/manifest-CE1F6CC2.js" };
+var assets_manifest_default = { version: "4a394c4a", entry: { module: "/build/entry.client-MTZEZ4NW.js", imports: ["/build/_shared/chunk-TF4HRXYO.js", "/build/_shared/chunk-4IYZMDEG.js"] }, routes: { root: { id: "root", parentId: void 0, path: "", index: void 0, caseSensitive: void 0, module: "/build/root-KG4HX2P4.js", imports: ["/build/_shared/chunk-FIBOST5T.js"], hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/index": { id: "routes/index", parentId: "root", path: void 0, index: !0, caseSensitive: void 0, module: "/build/routes/index-MRDACDWE.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/profile": { id: "routes/profile", parentId: "root", path: "profile", index: void 0, caseSensitive: void 0, module: "/build/routes/profile-QPS4HCGO.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 } }, url: "/build/manifest-4A394C4A.js" };
 
 // server-entry-module:@remix-run/dev/server-build
 var assetsBuildDirectory = "public\\build", future = { v2_meta: !1 }, publicPath = "/build/", entry = { module: entry_server_exports }, routes = {

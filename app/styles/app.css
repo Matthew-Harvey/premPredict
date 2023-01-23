@@ -2549,6 +2549,10 @@ html {
   margin: auto;
 }
 
+.m-2 {
+  margin: 0.5rem;
+}
+
 .my-4 {
   margin-top: 1rem;
   margin-bottom: 1rem;
@@ -2586,6 +2590,10 @@ html {
   height: 1.25rem;
 }
 
+.h-14 {
+  height: 3.5rem;
+}
+
 .w-5 {
   width: 1.25rem;
 }
@@ -2602,6 +2610,10 @@ html {
   width: 2.5rem;
 }
 
+.w-14 {
+  width: 3.5rem;
+}
+
 .max-w-md {
   max-width: 28rem;
 }
@@ -2616,6 +2628,10 @@ html {
 
 .justify-center {
   justify-content: center;
+}
+
+.rounded-full {
+  border-radius: 9999px;
 }
 
 .bg-white {
