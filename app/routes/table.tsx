@@ -4,6 +4,7 @@ import { useAuth0 } from "@auth0/auth0-react";
 import { json } from "@remix-run/node"; // or cloudflare/deno
 import { useLoaderData } from "@remix-run/react";
 import * as tf from '@tensorflow/tfjs';
+import Load from "~/comps/load";
 import LoginButton from "~/comps/loginbutton";
 import LogoutButton from "~/comps/logoutbutton";
 import Nav from "~/comps/nav";
@@ -83,9 +84,11 @@ export default function Index() {
   let sendparam = JSON.stringify({"auth":isAuthenticated, "user": user});
 
   if (isLoading) {
-
-    return <div>Loading...</div>;
-
+    return (
+      <>
+        <Load />
+      </>
+    );
   } else {
     
     return (
