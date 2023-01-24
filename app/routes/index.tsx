@@ -6,6 +6,7 @@ import { useLoaderData } from "@remix-run/react";
 import * as tf from '@tensorflow/tfjs';
 import LoginButton from "~/comps/loginbutton";
 import LogoutButton from "~/comps/logoutbutton";
+import Nav from "~/comps/nav";
 import User from "~/comps/profile";
 
 export async function loader() {
@@ -88,7 +89,7 @@ export default function Index() {
     
     return (
       <>
-      
+        <Nav user={user}  isAuthenticated={isAuthenticated} />
         <div className="navbar sticky top-0 bg-white z-50">
           <div className="navbar-start">
             <div className="dropdown">
@@ -135,7 +136,7 @@ export default function Index() {
           </div>
         </div>
         <ul>
-          <div className="grid grid-cols-3">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
             <div>
               <p className="m-auto justify-center text-2xl font-semibold text-center">Results</p>
               {results.map((result) => (
