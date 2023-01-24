@@ -89,7 +89,7 @@ export default function Index() {
     
     return (
       <>
-        <Nav user={user}  isAuthenticated={isAuthenticated} />
+        <Nav avatar={user?.picture}  isAuthenticated={isAuthenticated} />
         <div className="hero bg-base-200 my-4">
           <div className="hero-content text-center">
             <div className="max-w-md">

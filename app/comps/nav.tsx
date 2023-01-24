@@ -1,7 +1,7 @@
 import LoginButton from "./loginbutton";
 import LogoutButton from "./logoutbutton";
 
-export default function Navbar(user: any, isAuthenticated: any) {
+export default function Navbar(avatar: any, isAuthenticated: any) {
     return (
         <div className="navbar sticky top-0 bg-white z-50">
           <div className="navbar-start">
@@ -33,7 +33,7 @@ export default function Navbar(user: any, isAuthenticated: any) {
                   </div>
                 ) :
                   <div className="flex">
-                      <img src={user?.picture} alt="pfp" className="rounded-full m-2 w-8 h-8" />
+                      <img src={avatar} alt="pfp" className="rounded-full m-2 w-8 h-8" />
                       <LogoutButton />
                   </div>
               }
