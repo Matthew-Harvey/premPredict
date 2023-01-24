@@ -1,7 +1,10 @@
 import LoginButton from "./loginbutton";
 import LogoutButton from "./logoutbutton";
 
-export default function Navbar(avatar: any, isAuthenticated: any) {
+// @ts-ignore 
+export default function Navbar({params}) {
+    let param = JSON.parse(params);
+    console.log(param.user, param.auth);
     return (
         <div className="navbar sticky top-0 bg-white z-50">
           <div className="navbar-start">
@@ -27,13 +30,13 @@ export default function Navbar(avatar: any, isAuthenticated: any) {
             </ul>
           </div>
           <div className="navbar-end">
-              {!isAuthenticated ? (
+              {!param.auth ? (
                   <div>
                     <LoginButton />
                   </div>
                 ) :
                   <div className="flex">
-                      <img src={avatar} alt="pfp" className="rounded-full m-2 w-8 h-8" />
+                      <img src={param.user.picture} alt="pfp" className="rounded-full m-2 w-8 h-8" />
                       <LogoutButton />
                   </div>
               }

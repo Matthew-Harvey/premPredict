@@ -80,6 +80,7 @@ export default function Index() {
   const prediction = predict(data)
 
   const { isLoading, isAuthenticated, user } = useAuth0();
+  let sendparam = JSON.stringify({"auth":isAuthenticated, "user": user});
 
   if (isLoading) {
 
@@ -89,7 +90,7 @@ export default function Index() {
     
     return (
       <>
-        <Nav avatar={user?.picture}  isAuthenticated={isAuthenticated} />
+        <Nav params={sendparam} />
         <div className="hero bg-base-200 my-4">
           <div className="hero-content text-center">
             <div className="max-w-md">

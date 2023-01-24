@@ -1705,6 +1705,30 @@ html {
   --tw-backdrop-sepia:  ;
 }
 
+.avatar {
+  position: relative;
+  display: inline-flex;
+}
+
+.avatar > div {
+  display: block;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+}
+
+.avatar img {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.avatar.placeholder > div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .btn {
   display: inline-flex;
   flex-shrink: 0;
@@ -2013,6 +2037,14 @@ html {
   position: -webkit-sticky;
   left: 0px;
   z-index: 11;
+}
+
+.avatar-group :where(.avatar) {
+  overflow: hidden;
+  border-radius: 9999px;
+  border-width: 4px;
+  --tw-border-opacity: 1;
+  border-color: hsl(var(--b1) / var(--tw-border-opacity));
 }
 
 .btm-nav>* .label {
@@ -2452,6 +2484,36 @@ html {
 .menu-horizontal > :where(li) > :where(ul) {
   top: 100%;
   left: initial;
+}
+
+.avatar.online:before {
+  content: "";
+  position: absolute;
+  z-index: 10;
+  display: block;
+  border-radius: 9999px;
+  --tw-bg-opacity: 1;
+  background-color: hsl(var(--su) / var(--tw-bg-opacity));
+  width: 15%;
+  height: 15%;
+  top: 7%;
+  right: 7%;
+  box-shadow: 0 0 0 2px hsl(var(--b1));
+}
+
+.avatar.offline:before {
+  content: "";
+  position: absolute;
+  z-index: 10;
+  display: block;
+  border-radius: 9999px;
+  --tw-bg-opacity: 1;
+  background-color: hsl(var(--b3, var(--b2)) / var(--tw-bg-opacity));
+  width: 15%;
+  height: 15%;
+  top: 7%;
+  right: 7%;
+  box-shadow: 0 0 0 2px hsl(var(--b1));
 }
 
 .btn-group .btn:not(:first-child):not(:last-child), .btn-group.btn-group-horizontal .btn:not(:first-child):not(:last-child) {
