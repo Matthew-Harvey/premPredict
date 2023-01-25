@@ -59,7 +59,7 @@ __export(root_exports, {
 var import_auth0_react = require("@auth0/auth0-react"), import_react2 = require("@remix-run/react");
 
 // app/styles/app.css
-var app_default = "/build/_assets/app-EE2JLLQ3.css";
+var app_default = "/build/_assets/app-6PIQBFIE.css";
 
 // app/root.tsx
 var import_jsx_dev_runtime2 = require("react/jsx-dev-runtime");
@@ -307,7 +307,11 @@ function Navbar({ params }) {
           columnNumber: 15
         }, this),
         /* @__PURE__ */ (0, import_jsx_dev_runtime7.jsxDEV)("ul", { tabIndex: 0, className: "menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52", children: [
-          /* @__PURE__ */ (0, import_jsx_dev_runtime7.jsxDEV)("li", { children: /* @__PURE__ */ (0, import_jsx_dev_runtime7.jsxDEV)("a", { href: "/predict", children: "Predict" }, void 0, !1, {
+          /* @__PURE__ */ (0, import_jsx_dev_runtime7.jsxDEV)("li", { children: /* @__PURE__ */ (0, import_jsx_dev_runtime7.jsxDEV)("button", { className: "btn btn-ghost", children: /* @__PURE__ */ (0, import_jsx_dev_runtime7.jsxDEV)("a", { href: "/predict", children: "Predict" }, void 0, !1, {
+            fileName: "app/comps/nav.tsx",
+            lineNumber: 16,
+            columnNumber: 55
+          }, this) }, void 0, !1, {
             fileName: "app/comps/nav.tsx",
             lineNumber: 16,
             columnNumber: 21
@@ -316,7 +320,11 @@ function Navbar({ params }) {
             lineNumber: 16,
             columnNumber: 17
           }, this),
-          /* @__PURE__ */ (0, import_jsx_dev_runtime7.jsxDEV)("li", { children: /* @__PURE__ */ (0, import_jsx_dev_runtime7.jsxDEV)("a", { href: "/fixtures", children: "Fixtures" }, void 0, !1, {
+          /* @__PURE__ */ (0, import_jsx_dev_runtime7.jsxDEV)("li", { children: /* @__PURE__ */ (0, import_jsx_dev_runtime7.jsxDEV)("button", { className: "btn btn-ghost", children: /* @__PURE__ */ (0, import_jsx_dev_runtime7.jsxDEV)("a", { href: "/fixtures", children: "Fixtures" }, void 0, !1, {
+            fileName: "app/comps/nav.tsx",
+            lineNumber: 17,
+            columnNumber: 55
+          }, this) }, void 0, !1, {
             fileName: "app/comps/nav.tsx",
             lineNumber: 17,
             columnNumber: 21
@@ -325,7 +333,11 @@ function Navbar({ params }) {
             lineNumber: 17,
             columnNumber: 17
           }, this),
-          /* @__PURE__ */ (0, import_jsx_dev_runtime7.jsxDEV)("li", { children: /* @__PURE__ */ (0, import_jsx_dev_runtime7.jsxDEV)("a", { href: "/results", children: "Results" }, void 0, !1, {
+          /* @__PURE__ */ (0, import_jsx_dev_runtime7.jsxDEV)("li", { children: /* @__PURE__ */ (0, import_jsx_dev_runtime7.jsxDEV)("button", { className: "btn btn-ghost", children: /* @__PURE__ */ (0, import_jsx_dev_runtime7.jsxDEV)("a", { href: "/results", children: "Results" }, void 0, !1, {
+            fileName: "app/comps/nav.tsx",
+            lineNumber: 18,
+            columnNumber: 55
+          }, this) }, void 0, !1, {
             fileName: "app/comps/nav.tsx",
             lineNumber: 18,
             columnNumber: 21
@@ -334,7 +346,11 @@ function Navbar({ params }) {
             lineNumber: 18,
             columnNumber: 17
           }, this),
-          /* @__PURE__ */ (0, import_jsx_dev_runtime7.jsxDEV)("li", { children: /* @__PURE__ */ (0, import_jsx_dev_runtime7.jsxDEV)("a", { href: "/table", children: "Table" }, void 0, !1, {
+          /* @__PURE__ */ (0, import_jsx_dev_runtime7.jsxDEV)("li", { children: /* @__PURE__ */ (0, import_jsx_dev_runtime7.jsxDEV)("button", { className: "btn btn-ghost", children: /* @__PURE__ */ (0, import_jsx_dev_runtime7.jsxDEV)("a", { href: "/table", children: "Table" }, void 0, !1, {
+            fileName: "app/comps/nav.tsx",
+            lineNumber: 19,
+            columnNumber: 55
+          }, this) }, void 0, !1, {
             fileName: "app/comps/nav.tsx",
             lineNumber: 19,
             columnNumber: 21
@@ -364,7 +380,11 @@ function Navbar({ params }) {
       columnNumber: 11
     }, this),
     /* @__PURE__ */ (0, import_jsx_dev_runtime7.jsxDEV)("div", { className: "navbar-center hidden lg:flex", children: /* @__PURE__ */ (0, import_jsx_dev_runtime7.jsxDEV)("ul", { className: "menu menu-horizontal px-1", children: [
-      /* @__PURE__ */ (0, import_jsx_dev_runtime7.jsxDEV)("li", { children: /* @__PURE__ */ (0, import_jsx_dev_runtime7.jsxDEV)("a", { href: "/predict", children: "Predict" }, void 0, !1, {
+      /* @__PURE__ */ (0, import_jsx_dev_runtime7.jsxDEV)("li", { children: /* @__PURE__ */ (0, import_jsx_dev_runtime7.jsxDEV)("button", { className: "btn btn-ghost", children: /* @__PURE__ */ (0, import_jsx_dev_runtime7.jsxDEV)("a", { href: "/predict", children: "Predict" }, void 0, !1, {
+        fileName: "app/comps/nav.tsx",
+        lineNumber: 26,
+        columnNumber: 55
+      }, this) }, void 0, !1, {
         fileName: "app/comps/nav.tsx",
         lineNumber: 26,
         columnNumber: 21
@@ -373,7 +393,11 @@ function Navbar({ params }) {
         lineNumber: 26,
         columnNumber: 17
       }, this),
-      /* @__PURE__ */ (0, import_jsx_dev_runtime7.jsxDEV)("li", { children: /* @__PURE__ */ (0, import_jsx_dev_runtime7.jsxDEV)("a", { href: "/fixtures", children: "Fixtures" }, void 0, !1, {
+      /* @__PURE__ */ (0, import_jsx_dev_runtime7.jsxDEV)("li", { children: /* @__PURE__ */ (0, import_jsx_dev_runtime7.jsxDEV)("button", { className: "btn btn-ghost", children: /* @__PURE__ */ (0, import_jsx_dev_runtime7.jsxDEV)("a", { href: "/fixtures", children: "Fixtures" }, void 0, !1, {
+        fileName: "app/comps/nav.tsx",
+        lineNumber: 27,
+        columnNumber: 55
+      }, this) }, void 0, !1, {
         fileName: "app/comps/nav.tsx",
         lineNumber: 27,
         columnNumber: 21
@@ -382,7 +406,11 @@ function Navbar({ params }) {
         lineNumber: 27,
         columnNumber: 17
       }, this),
-      /* @__PURE__ */ (0, import_jsx_dev_runtime7.jsxDEV)("li", { children: /* @__PURE__ */ (0, import_jsx_dev_runtime7.jsxDEV)("a", { href: "/results", children: "Results" }, void 0, !1, {
+      /* @__PURE__ */ (0, import_jsx_dev_runtime7.jsxDEV)("li", { children: /* @__PURE__ */ (0, import_jsx_dev_runtime7.jsxDEV)("button", { className: "btn btn-ghost", children: /* @__PURE__ */ (0, import_jsx_dev_runtime7.jsxDEV)("a", { href: "/results", children: "Results" }, void 0, !1, {
+        fileName: "app/comps/nav.tsx",
+        lineNumber: 28,
+        columnNumber: 55
+      }, this) }, void 0, !1, {
         fileName: "app/comps/nav.tsx",
         lineNumber: 28,
         columnNumber: 21
@@ -391,7 +419,11 @@ function Navbar({ params }) {
         lineNumber: 28,
         columnNumber: 17
       }, this),
-      /* @__PURE__ */ (0, import_jsx_dev_runtime7.jsxDEV)("li", { children: /* @__PURE__ */ (0, import_jsx_dev_runtime7.jsxDEV)("a", { href: "/table", children: "Table" }, void 0, !1, {
+      /* @__PURE__ */ (0, import_jsx_dev_runtime7.jsxDEV)("li", { children: /* @__PURE__ */ (0, import_jsx_dev_runtime7.jsxDEV)("button", { className: "btn btn-ghost", children: /* @__PURE__ */ (0, import_jsx_dev_runtime7.jsxDEV)("a", { href: "/table", children: "Table" }, void 0, !1, {
+        fileName: "app/comps/nav.tsx",
+        lineNumber: 29,
+        columnNumber: 55
+      }, this) }, void 0, !1, {
         fileName: "app/comps/nav.tsx",
         lineNumber: 29,
         columnNumber: 21
@@ -674,7 +706,7 @@ __export(table_exports, {
   default: () => Index2,
   loader: () => loader3
 });
-var import_auth0_react6 = require("@auth0/auth0-react"), import_node3 = require("@remix-run/node"), import_react5 = require("@remix-run/react"), tf2 = __toESM(require("@tensorflow/tfjs"));
+var import_auth0_react6 = require("@auth0/auth0-react"), import_node3 = require("@remix-run/node"), import_react5 = require("@remix-run/react");
 var import_jsx_dev_runtime9 = require("react/jsx-dev-runtime");
 async function loader3() {
   var _a;
@@ -686,220 +718,103 @@ async function loader3() {
   }, fantasty_stats_return = await (await fetch("https://fantasy.premierleague.com/api/bootstrap-static/")).json(), standings_return = await (await fetch("https://api.football-data.org/v4/competitions/PL/standings", options)).json(), matches_return = await (await fetch("https://api.football-data.org/v4/competitions/PL/matches", options)).json();
   return (0, import_node3.json)({ date: new Date(), matches: matches_return, fantasy: fantasty_stats_return, standings: standings_return });
 }
-function sortFunctionHigh2(a, b) {
-  return new Date(a[1]) === new Date(b[1]) ? 0 : new Date(a[1]) > new Date(b[1]) ? -1 : 1;
-}
-function sortFunctionLow2(a, b) {
-  return new Date(a[1]) === new Date(b[1]) ? 0 : new Date(a[1]) < new Date(b[1]) ? -1 : 1;
-}
 function Index2() {
   let load_data = (0, import_react5.useLoaderData)();
   console.log(load_data);
-  let fixtures = [], results = [];
-  for (let match in load_data.matches.matches)
-    load_data.matches.matches[match].status.toUpperCase() == "FINISHED" ? results.push([load_data.matches.matches[match], load_data.matches.matches[match].utcDate]) : new Date() < new Date(load_data.matches.matches[match].utcDate) && fixtures.push([load_data.matches.matches[match], load_data.matches.matches[match].utcDate]);
-  fixtures = fixtures.sort(sortFunctionLow2), results = results.sort(sortFunctionHigh2);
   let overall_table = [];
   for (let team in load_data.standings.standings[0].table)
     overall_table.push(load_data.standings.standings[0].table[team]);
-  let predict = (data2) => {
-    let weights = tf2.tensor([2.5, 0.01]);
-    return data2.dot(weights);
-  }, infectedPeople = [2, 5, 12, 30], infectedCountries = [1, 1, 4, 5], data = tf2.tensor([infectedPeople[1], infectedCountries[1]]), prediction = predict(data), { isLoading, isAuthenticated, user } = (0, import_auth0_react6.useAuth0)(), sendparam = JSON.stringify({ auth: isAuthenticated, user });
+  let { isLoading, isAuthenticated, user } = (0, import_auth0_react6.useAuth0)(), sendparam = JSON.stringify({ auth: isAuthenticated, user });
   return isLoading ? /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)(import_jsx_dev_runtime9.Fragment, { children: /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)(Load, {}, void 0, !1, {
     fileName: "app/routes/table.tsx",
-    lineNumber: 89,
+    lineNumber: 65,
     columnNumber: 9
   }, this) }, void 0, !1, {
     fileName: "app/routes/table.tsx",
-    lineNumber: 88,
+    lineNumber: 64,
     columnNumber: 7
   }, this) : /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)(import_jsx_dev_runtime9.Fragment, { children: [
     /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)(Navbar, { params: sendparam }, void 0, !1, {
       fileName: "app/routes/table.tsx",
-      lineNumber: 96,
+      lineNumber: 72,
       columnNumber: 9
     }, this),
-    /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)("div", { className: "hero bg-base-200 my-4", children: /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)("div", { className: "hero-content text-center", children: /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)("div", { className: "max-w-md", children: [
-      /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)("img", { src: load_data.matches.competition.emblem, alt: "League Emblem", className: "m-auto justify-center w-40" }, void 0, !1, {
+    /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)("ul", { children: /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)("div", { className: "max-w-6xl m-auto mt-10", children: [
+      /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)("p", { className: "m-auto justify-center text-2xl font-semibold text-center", children: "Table" }, void 0, !1, {
         fileName: "app/routes/table.tsx",
-        lineNumber: 100,
+        lineNumber: 75,
         columnNumber: 15
       }, this),
-      /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)("h1", { className: "text-5xl font-bold", children: [
-        load_data.matches.competition.name,
-        " Predictions - TABLE"
+      /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)("li", { className: "grid grid-cols-4 my-4 max-w-xl m-auto", children: [
+        /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)("p", { className: "m-auto justify-center", children: "Position" }, void 0, !1, {
+          fileName: "app/routes/table.tsx",
+          lineNumber: 77,
+          columnNumber: 21
+        }, this),
+        /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)("p", { className: "m-auto justify-center", children: "Team" }, void 0, !1, {
+          fileName: "app/routes/table.tsx",
+          lineNumber: 78,
+          columnNumber: 21
+        }, this),
+        /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)("p", { className: "m-auto justify-center", children: "Points" }, void 0, !1, {
+          fileName: "app/routes/table.tsx",
+          lineNumber: 79,
+          columnNumber: 21
+        }, this),
+        /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)("p", { className: "m-auto justify-center", children: "Form" }, void 0, !1, {
+          fileName: "app/routes/table.tsx",
+          lineNumber: 80,
+          columnNumber: 21
+        }, this)
       ] }, void 0, !0, {
         fileName: "app/routes/table.tsx",
-        lineNumber: 101,
-        columnNumber: 15
+        lineNumber: 76,
+        columnNumber: 17
       }, this),
-      /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)("p", { className: "py-6", children: [
-        "Predicted next day infections... infected people: ",
-        data.dataSync()[0],
-        ", infected countries ",
-        data.dataSync()[1],
-        ", prediction: ",
-        prediction.dataSync()[0]
-      ] }, void 0, !0, {
+      overall_table.map((pos) => /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)("li", { className: "grid grid-cols-4 my-4 max-w-xl m-auto", children: [
+        /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)("p", { className: "m-auto justify-center", children: pos.position }, void 0, !1, {
+          fileName: "app/routes/table.tsx",
+          lineNumber: 84,
+          columnNumber: 21
+        }, this),
+        /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)("img", { src: pos.team.crest, alt: "Team Emblem", className: "m-auto justify-center w-10" }, void 0, !1, {
+          fileName: "app/routes/table.tsx",
+          lineNumber: 85,
+          columnNumber: 21
+        }, this),
+        /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)("p", { className: "m-auto justify-center", children: pos.points }, void 0, !1, {
+          fileName: "app/routes/table.tsx",
+          lineNumber: 86,
+          columnNumber: 21
+        }, this),
+        /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)("p", { className: "m-auto justify-center", children: pos.form }, void 0, !1, {
+          fileName: "app/routes/table.tsx",
+          lineNumber: 87,
+          columnNumber: 21
+        }, this)
+      ] }, pos.team.id, !0, {
         fileName: "app/routes/table.tsx",
-        lineNumber: 102,
-        columnNumber: 15
-      }, this)
+        lineNumber: 83,
+        columnNumber: 19
+      }, this))
     ] }, void 0, !0, {
       fileName: "app/routes/table.tsx",
-      lineNumber: 99,
+      lineNumber: 74,
       columnNumber: 13
     }, this) }, void 0, !1, {
       fileName: "app/routes/table.tsx",
-      lineNumber: 98,
-      columnNumber: 11
-    }, this) }, void 0, !1, {
-      fileName: "app/routes/table.tsx",
-      lineNumber: 97,
-      columnNumber: 9
-    }, this),
-    /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)("ul", { children: /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)("div", { className: "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3", children: [
-      /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)("div", { children: [
-        /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)("p", { className: "m-auto justify-center text-2xl font-semibold text-center", children: "Results" }, void 0, !1, {
-          fileName: "app/routes/table.tsx",
-          lineNumber: 109,
-          columnNumber: 15
-        }, this),
-        results.map((result) => /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)("li", { className: "grid grid-cols-3 my-4 max-w-xl m-auto", children: [
-          /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)("img", { src: result[0].homeTeam.crest, alt: "Team Emblem", className: "m-auto justify-center w-10" }, void 0, !1, {
-            fileName: "app/routes/table.tsx",
-            lineNumber: 112,
-            columnNumber: 19
-          }, this),
-          /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)("div", { children: [
-            /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)("p", { className: "m-auto justify-center text-center", children: [
-              result[0].score.fullTime.home,
-              " - ",
-              result[0].score.fullTime.away
-            ] }, void 0, !0, {
-              fileName: "app/routes/table.tsx",
-              lineNumber: 114,
-              columnNumber: 21
-            }, this),
-            /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)("p", { className: "m-auto justify-center text-center", children: new Intl.DateTimeFormat("en-GB").format(new Date(result[1].toString())) }, void 0, !1, {
-              fileName: "app/routes/table.tsx",
-              lineNumber: 115,
-              columnNumber: 21
-            }, this)
-          ] }, void 0, !0, {
-            fileName: "app/routes/table.tsx",
-            lineNumber: 113,
-            columnNumber: 19
-          }, this),
-          /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)("img", { src: result[0].awayTeam.crest, alt: "Team Emblem", className: "m-auto justify-center w-10" }, void 0, !1, {
-            fileName: "app/routes/table.tsx",
-            lineNumber: 117,
-            columnNumber: 19
-          }, this)
-        ] }, result[0].id, !0, {
-          fileName: "app/routes/table.tsx",
-          lineNumber: 111,
-          columnNumber: 17
-        }, this))
-      ] }, void 0, !0, {
-        fileName: "app/routes/table.tsx",
-        lineNumber: 108,
-        columnNumber: 13
-      }, this),
-      /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)("div", { children: [
-        /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)("p", { className: "m-auto justify-center text-2xl font-semibold text-center", children: "Fixtures" }, void 0, !1, {
-          fileName: "app/routes/table.tsx",
-          lineNumber: 122,
-          columnNumber: 15
-        }, this),
-        fixtures.map((fixture) => /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)("li", { className: "grid grid-cols-3 my-4 max-w-xl m-auto", children: [
-          /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)("img", { src: fixture[0].homeTeam.crest, alt: "Team Emblem", className: "m-auto justify-center w-10" }, void 0, !1, {
-            fileName: "app/routes/table.tsx",
-            lineNumber: 125,
-            columnNumber: 19
-          }, this),
-          /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)("div", { children: [
-            /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)("p", { className: "m-auto justify-center text-center", children: " - " }, void 0, !1, {
-              fileName: "app/routes/table.tsx",
-              lineNumber: 127,
-              columnNumber: 21
-            }, this),
-            /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)("p", { className: "m-auto justify-center text-center", children: new Intl.DateTimeFormat("en-GB").format(new Date(fixture[1].toString())) }, void 0, !1, {
-              fileName: "app/routes/table.tsx",
-              lineNumber: 128,
-              columnNumber: 21
-            }, this)
-          ] }, void 0, !0, {
-            fileName: "app/routes/table.tsx",
-            lineNumber: 126,
-            columnNumber: 19
-          }, this),
-          /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)("img", { src: fixture[0].awayTeam.crest, alt: "Team Emblem", className: "m-auto justify-center w-10" }, void 0, !1, {
-            fileName: "app/routes/table.tsx",
-            lineNumber: 130,
-            columnNumber: 19
-          }, this)
-        ] }, fixture[0].id, !0, {
-          fileName: "app/routes/table.tsx",
-          lineNumber: 124,
-          columnNumber: 17
-        }, this))
-      ] }, void 0, !0, {
-        fileName: "app/routes/table.tsx",
-        lineNumber: 121,
-        columnNumber: 13
-      }, this),
-      /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)("div", { children: [
-        /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)("p", { className: "m-auto justify-center text-2xl font-semibold text-center", children: "Table" }, void 0, !1, {
-          fileName: "app/routes/table.tsx",
-          lineNumber: 135,
-          columnNumber: 15
-        }, this),
-        overall_table.map((pos) => /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)("li", { className: "grid grid-cols-3 my-4 max-w-xl m-auto", children: [
-          /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)("p", { className: "m-auto justify-center", children: pos.position }, void 0, !1, {
-            fileName: "app/routes/table.tsx",
-            lineNumber: 138,
-            columnNumber: 19
-          }, this),
-          /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)("img", { src: pos.team.crest, alt: "Team Emblem", className: "m-auto justify-center w-10" }, void 0, !1, {
-            fileName: "app/routes/table.tsx",
-            lineNumber: 139,
-            columnNumber: 19
-          }, this),
-          /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)("p", { className: "m-auto justify-center", children: pos.points }, void 0, !1, {
-            fileName: "app/routes/table.tsx",
-            lineNumber: 140,
-            columnNumber: 19
-          }, this)
-        ] }, pos.team.id, !0, {
-          fileName: "app/routes/table.tsx",
-          lineNumber: 137,
-          columnNumber: 17
-        }, this))
-      ] }, void 0, !0, {
-        fileName: "app/routes/table.tsx",
-        lineNumber: 134,
-        columnNumber: 13
-      }, this)
-    ] }, void 0, !0, {
-      fileName: "app/routes/table.tsx",
-      lineNumber: 107,
-      columnNumber: 11
-    }, this) }, void 0, !1, {
-      fileName: "app/routes/table.tsx",
-      lineNumber: 106,
+      lineNumber: 73,
       columnNumber: 9
     }, this)
   ] }, void 0, !0, {
     fileName: "app/routes/table.tsx",
-    lineNumber: 95,
+    lineNumber: 71,
     columnNumber: 7
   }, this);
 }
 
 // server-assets-manifest:@remix-run/dev/assets-manifest
-var assets_manifest_default = { version: "2a073dde", entry: { module: "/build/entry.client-MTZEZ4NW.js", imports: ["/build/_shared/chunk-TF4HRXYO.js", "/build/_shared/chunk-4IYZMDEG.js"] }, routes: { root: { id: "root", parentId: void 0, path: "", index: void 0, caseSensitive: void 0, module: "/build/root-KDDOLRHE.js", imports: ["/build/_shared/chunk-FIBOST5T.js"], hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/index": { id: "routes/index", parentId: "root", path: void 0, index: !0, caseSensitive: void 0, module: "/build/routes/index-W353SW2F.js", imports: ["/build/_shared/chunk-2UIRIEYQ.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/profile": { id: "routes/profile", parentId: "root", path: "profile", index: void 0, caseSensitive: void 0, module: "/build/routes/profile-QPS4HCGO.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/table": { id: "routes/table", parentId: "root", path: "table", index: void 0, caseSensitive: void 0, module: "/build/routes/table-3FKFECCL.js", imports: ["/build/_shared/chunk-2UIRIEYQ.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 } }, url: "/build/manifest-2A073DDE.js" };
+var assets_manifest_default = { version: "8f76a588", entry: { module: "/build/entry.client-MTZEZ4NW.js", imports: ["/build/_shared/chunk-TF4HRXYO.js", "/build/_shared/chunk-4IYZMDEG.js"] }, routes: { root: { id: "root", parentId: void 0, path: "", index: void 0, caseSensitive: void 0, module: "/build/root-6B6GCU5D.js", imports: ["/build/_shared/chunk-FIBOST5T.js"], hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/index": { id: "routes/index", parentId: "root", path: void 0, index: !0, caseSensitive: void 0, module: "/build/routes/index-7UV7Y55G.js", imports: ["/build/_shared/chunk-3TMSQRHY.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/profile": { id: "routes/profile", parentId: "root", path: "profile", index: void 0, caseSensitive: void 0, module: "/build/routes/profile-QPS4HCGO.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/table": { id: "routes/table", parentId: "root", path: "table", index: void 0, caseSensitive: void 0, module: "/build/routes/table-GSYPYR6W.js", imports: ["/build/_shared/chunk-3TMSQRHY.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 } }, url: "/build/manifest-8F76A588.js" };
 
 // server-entry-module:@remix-run/dev/server-build
 var assetsBuildDirectory = "public\\build", future = { v2_meta: !1 }, publicPath = "/build/", entry = { module: entry_server_exports }, routes = {
