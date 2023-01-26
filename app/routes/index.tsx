@@ -5,10 +5,7 @@ import { json } from "@remix-run/node"; // or cloudflare/deno
 import { useLoaderData } from "@remix-run/react";
 import * as tf from '@tensorflow/tfjs';
 import Load from "~/comps/load";
-import LoginButton from "~/comps/loginbutton";
-import LogoutButton from "~/comps/logoutbutton";
 import Nav from "~/comps/nav";
-import User from "~/comps/profile";
 
 export async function loader() {
   const api_key = process.env.PUBLIC_FOOTBALL_API_KEY?.toString();
