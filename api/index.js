@@ -143,7 +143,7 @@ __export(fixtures_exports, {
   default: () => Index,
   loader: () => loader
 });
-var import_auth0_react4 = require("@auth0/auth0-react"), import_node = require("@remix-run/node"), import_react3 = require("@remix-run/react");
+var import_auth0_react4 = require("@auth0/auth0-react"), import_react3 = require("@remix-run/react");
 
 // app/comps/load.tsx
 var import_jsx_dev_runtime3 = require("react/jsx-dev-runtime");
@@ -406,20 +406,41 @@ function Navbar({ params }) {
   }, this);
 }
 
+// app/functions/loading.ts
+var import_node = require("@remix-run/node"), import_supabase_js = require("@supabase/supabase-js");
+async function getInfo() {
+  var _a, _b, _c;
+  let supabase = (0, import_supabase_js.createClient)((_a = process.env.REACT_APP_SUPABASE_URL) == null ? void 0 : _a.toString(), (_b = process.env.REACT_APP_SUPABASE_ANON_KEY) == null ? void 0 : _b.toString()), { data } = await supabase.from("api_responses").select().eq("created_at", new Date().toDateString()), matches_return = JSON.parse("{}"), standings_return = JSON.parse("{}"), fantasty_stats_return = JSON.parse("{}"), already_exists = !1;
+  try {
+    already_exists = data[0].created_at == new Date().toDateString();
+  } catch {
+    already_exists = !1;
+  }
+  if (already_exists == !1) {
+    let options = {
+      method: "GET",
+      headers: {
+        "X-Auth-Token": (_c = process.env.PUBLIC_FOOTBALL_API_KEY) == null ? void 0 : _c.toString()
+      }
+    };
+    fantasty_stats_return = await (await fetch("https://fantasy.premierleague.com/api/bootstrap-static/")).json(), standings_return = await (await fetch("https://api.football-data.org/v4/competitions/PL/standings", options)).json(), matches_return = await (await fetch("https://api.football-data.org/v4/competitions/PL/matches", options)).json(), await supabase.from("api_responses").insert({ id: new Date().getTime(), created_at: new Date().toDateString(), fantasy_response: fantasty_stats_return, footballmatch_response: matches_return, footballstanding_response: standings_return });
+  } else
+    standings_return = data[0].footballstanding_response, matches_return = data[0].footballmatch_response, fantasty_stats_return = data[0].fantasy_response;
+  return (0, import_node.json)({ date: new Date(), matches: matches_return, fantasy: fantasty_stats_return, standings: standings_return });
+}
+
+// app/functions/sorting.ts
+function sortHigh(a, b) {
+  return new Date(a[1]) === new Date(b[1]) ? 0 : new Date(a[1]) > new Date(b[1]) ? -1 : 1;
+}
+function sortLow(a, b) {
+  return new Date(a[1]) === new Date(b[1]) ? 0 : new Date(a[1]) < new Date(b[1]) ? -1 : 1;
+}
+
 // app/routes/fixtures.tsx
 var import_jsx_dev_runtime7 = require("react/jsx-dev-runtime");
 async function loader() {
-  var _a;
-  let options = {
-    method: "GET",
-    headers: {
-      "X-Auth-Token": (_a = process.env.PUBLIC_FOOTBALL_API_KEY) == null ? void 0 : _a.toString()
-    }
-  }, fantasty_stats_return = await (await fetch("https://fantasy.premierleague.com/api/bootstrap-static/")).json(), standings_return = await (await fetch("https://api.football-data.org/v4/competitions/PL/standings", options)).json(), matches_return = await (await fetch("https://api.football-data.org/v4/competitions/PL/matches", options)).json();
-  return (0, import_node.json)({ date: new Date(), matches: matches_return, fantasy: fantasty_stats_return, standings: standings_return });
-}
-function sortFunctionLow(a, b) {
-  return new Date(a[1]) === new Date(b[1]) ? 0 : new Date(a[1]) < new Date(b[1]) ? -1 : 1;
+  return getInfo();
 }
 function Index() {
   let load_data = (0, import_react3.useLoaderData)();
@@ -427,76 +448,76 @@ function Index() {
   let fixtures = [];
   for (let match in load_data.matches.matches)
     new Date() < new Date(load_data.matches.matches[match].utcDate) && fixtures.push([load_data.matches.matches[match], load_data.matches.matches[match].utcDate]);
-  fixtures = fixtures.sort(sortFunctionLow);
+  fixtures = fixtures.sort(sortLow);
   let { isLoading, isAuthenticated, user } = (0, import_auth0_react4.useAuth0)(), sendparam = JSON.stringify({ auth: isAuthenticated, user });
   return isLoading ? /* @__PURE__ */ (0, import_jsx_dev_runtime7.jsxDEV)(import_jsx_dev_runtime7.Fragment, { children: /* @__PURE__ */ (0, import_jsx_dev_runtime7.jsxDEV)(Load, {}, void 0, !1, {
     fileName: "app/routes/fixtures.tsx",
-    lineNumber: 55,
+    lineNumber: 33,
     columnNumber: 9
   }, this) }, void 0, !1, {
     fileName: "app/routes/fixtures.tsx",
-    lineNumber: 54,
+    lineNumber: 32,
     columnNumber: 7
   }, this) : /* @__PURE__ */ (0, import_jsx_dev_runtime7.jsxDEV)(import_jsx_dev_runtime7.Fragment, { children: [
     /* @__PURE__ */ (0, import_jsx_dev_runtime7.jsxDEV)(Navbar, { params: sendparam }, void 0, !1, {
       fileName: "app/routes/fixtures.tsx",
-      lineNumber: 61,
+      lineNumber: 39,
       columnNumber: 9
     }, this),
     /* @__PURE__ */ (0, import_jsx_dev_runtime7.jsxDEV)("ul", { children: /* @__PURE__ */ (0, import_jsx_dev_runtime7.jsxDEV)("div", { className: "grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 max-w-6xl m-auto", children: /* @__PURE__ */ (0, import_jsx_dev_runtime7.jsxDEV)("div", { children: [
       /* @__PURE__ */ (0, import_jsx_dev_runtime7.jsxDEV)("p", { className: "m-auto justify-center text-2xl font-semibold text-center", children: "Fixtures" }, void 0, !1, {
         fileName: "app/routes/fixtures.tsx",
-        lineNumber: 65,
+        lineNumber: 43,
         columnNumber: 15
       }, this),
       fixtures.map((fixture) => /* @__PURE__ */ (0, import_jsx_dev_runtime7.jsxDEV)("li", { className: "grid grid-cols-3 my-4 max-w-xl m-auto", children: [
         /* @__PURE__ */ (0, import_jsx_dev_runtime7.jsxDEV)("img", { src: fixture[0].homeTeam.crest, alt: "Team Emblem", className: "m-auto justify-center w-10" }, void 0, !1, {
           fileName: "app/routes/fixtures.tsx",
-          lineNumber: 68,
+          lineNumber: 46,
           columnNumber: 19
         }, this),
         /* @__PURE__ */ (0, import_jsx_dev_runtime7.jsxDEV)("div", { children: [
           /* @__PURE__ */ (0, import_jsx_dev_runtime7.jsxDEV)("p", { className: "m-auto justify-center text-center", children: " - " }, void 0, !1, {
             fileName: "app/routes/fixtures.tsx",
-            lineNumber: 70,
+            lineNumber: 48,
             columnNumber: 21
           }, this),
           /* @__PURE__ */ (0, import_jsx_dev_runtime7.jsxDEV)("p", { className: "m-auto justify-center text-center", children: new Intl.DateTimeFormat("en-GB").format(new Date(fixture[1].toString())) }, void 0, !1, {
             fileName: "app/routes/fixtures.tsx",
-            lineNumber: 71,
+            lineNumber: 49,
             columnNumber: 21
           }, this)
         ] }, void 0, !0, {
           fileName: "app/routes/fixtures.tsx",
-          lineNumber: 69,
+          lineNumber: 47,
           columnNumber: 19
         }, this),
         /* @__PURE__ */ (0, import_jsx_dev_runtime7.jsxDEV)("img", { src: fixture[0].awayTeam.crest, alt: "Team Emblem", className: "m-auto justify-center w-10" }, void 0, !1, {
           fileName: "app/routes/fixtures.tsx",
-          lineNumber: 73,
+          lineNumber: 51,
           columnNumber: 19
         }, this)
       ] }, fixture[0].id, !0, {
         fileName: "app/routes/fixtures.tsx",
-        lineNumber: 67,
+        lineNumber: 45,
         columnNumber: 17
       }, this))
     ] }, void 0, !0, {
       fileName: "app/routes/fixtures.tsx",
-      lineNumber: 64,
+      lineNumber: 42,
       columnNumber: 13
     }, this) }, void 0, !1, {
       fileName: "app/routes/fixtures.tsx",
-      lineNumber: 63,
+      lineNumber: 41,
       columnNumber: 11
     }, this) }, void 0, !1, {
       fileName: "app/routes/fixtures.tsx",
-      lineNumber: 62,
+      lineNumber: 40,
       columnNumber: 9
     }, this)
   ] }, void 0, !0, {
     fileName: "app/routes/fixtures.tsx",
-    lineNumber: 60,
+    lineNumber: 38,
     columnNumber: 7
   }, this);
 }
@@ -578,20 +599,10 @@ __export(results_exports, {
   default: () => Results,
   loader: () => loader3
 });
-var import_auth0_react6 = require("@auth0/auth0-react"), import_node3 = require("@remix-run/node"), import_react5 = require("@remix-run/react");
+var import_auth0_react6 = require("@auth0/auth0-react"), import_react5 = require("@remix-run/react");
 var import_jsx_dev_runtime9 = require("react/jsx-dev-runtime");
 async function loader3() {
-  var _a;
-  let options = {
-    method: "GET",
-    headers: {
-      "X-Auth-Token": (_a = process.env.PUBLIC_FOOTBALL_API_KEY) == null ? void 0 : _a.toString()
-    }
-  }, fantasty_stats_return = await (await fetch("https://fantasy.premierleague.com/api/bootstrap-static/")).json(), standings_return = await (await fetch("https://api.football-data.org/v4/competitions/PL/standings", options)).json(), matches_return = await (await fetch("https://api.football-data.org/v4/competitions/PL/matches", options)).json();
-  return (0, import_node3.json)({ date: new Date(), matches: matches_return, fantasy: fantasty_stats_return, standings: standings_return });
-}
-function sortFunctionHigh(a, b) {
-  return new Date(a[1]) === new Date(b[1]) ? 0 : new Date(a[1]) > new Date(b[1]) ? -1 : 1;
+  return getInfo();
 }
 function Results() {
   let load_data = (0, import_react5.useLoaderData)();
@@ -599,32 +610,32 @@ function Results() {
   let results = [];
   for (let match in load_data.matches.matches)
     load_data.matches.matches[match].status.toUpperCase() == "FINISHED" && results.push([load_data.matches.matches[match], load_data.matches.matches[match].utcDate]);
-  results = results.sort(sortFunctionHigh);
+  results = results.sort(sortHigh);
   let { isLoading, isAuthenticated, user } = (0, import_auth0_react6.useAuth0)(), sendparam = JSON.stringify({ auth: isAuthenticated, user });
   return isLoading ? /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)(import_jsx_dev_runtime9.Fragment, { children: /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)(Load, {}, void 0, !1, {
     fileName: "app/routes/results.tsx",
-    lineNumber: 55,
+    lineNumber: 33,
     columnNumber: 9
   }, this) }, void 0, !1, {
     fileName: "app/routes/results.tsx",
-    lineNumber: 54,
+    lineNumber: 32,
     columnNumber: 7
   }, this) : /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)(import_jsx_dev_runtime9.Fragment, { children: [
     /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)(Navbar, { params: sendparam }, void 0, !1, {
       fileName: "app/routes/results.tsx",
-      lineNumber: 61,
+      lineNumber: 39,
       columnNumber: 9
     }, this),
     /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)("ul", { children: /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)("div", { className: "grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 max-w-6xl m-auto", children: /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)("div", { children: [
       /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)("p", { className: "m-auto justify-center text-2xl font-semibold text-center", children: "Results" }, void 0, !1, {
         fileName: "app/routes/results.tsx",
-        lineNumber: 65,
+        lineNumber: 43,
         columnNumber: 15
       }, this),
       results.map((result) => /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)("li", { className: "grid grid-cols-3 my-4 max-w-xl m-auto", children: [
         /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)("img", { src: result[0].homeTeam.crest, alt: "Team Emblem", className: "m-auto justify-center w-10" }, void 0, !1, {
           fileName: "app/routes/results.tsx",
-          lineNumber: 68,
+          lineNumber: 46,
           columnNumber: 19
         }, this),
         /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)("div", { children: [
@@ -634,45 +645,45 @@ function Results() {
             result[0].score.fullTime.away
           ] }, void 0, !0, {
             fileName: "app/routes/results.tsx",
-            lineNumber: 70,
+            lineNumber: 48,
             columnNumber: 21
           }, this),
           /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)("p", { className: "m-auto justify-center text-center", children: new Intl.DateTimeFormat("en-GB").format(new Date(result[1].toString())) }, void 0, !1, {
             fileName: "app/routes/results.tsx",
-            lineNumber: 71,
+            lineNumber: 49,
             columnNumber: 21
           }, this)
         ] }, void 0, !0, {
           fileName: "app/routes/results.tsx",
-          lineNumber: 69,
+          lineNumber: 47,
           columnNumber: 19
         }, this),
         /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)("img", { src: result[0].awayTeam.crest, alt: "Team Emblem", className: "m-auto justify-center w-10" }, void 0, !1, {
           fileName: "app/routes/results.tsx",
-          lineNumber: 73,
+          lineNumber: 51,
           columnNumber: 19
         }, this)
       ] }, result[0].id, !0, {
         fileName: "app/routes/results.tsx",
-        lineNumber: 67,
+        lineNumber: 45,
         columnNumber: 17
       }, this))
     ] }, void 0, !0, {
       fileName: "app/routes/results.tsx",
-      lineNumber: 64,
+      lineNumber: 42,
       columnNumber: 13
     }, this) }, void 0, !1, {
       fileName: "app/routes/results.tsx",
-      lineNumber: 63,
+      lineNumber: 41,
       columnNumber: 11
     }, this) }, void 0, !1, {
       fileName: "app/routes/results.tsx",
-      lineNumber: 62,
+      lineNumber: 40,
       columnNumber: 9
     }, this)
   ] }, void 0, !0, {
     fileName: "app/routes/results.tsx",
-    lineNumber: 60,
+    lineNumber: 38,
     columnNumber: 7
   }, this);
 }
@@ -683,39 +694,16 @@ __export(routes_exports, {
   default: () => Index2,
   loader: () => loader4
 });
-var import_auth0_react7 = require("@auth0/auth0-react"), import_node4 = require("@remix-run/node"), import_react6 = require("@remix-run/react"), tf = __toESM(require("@tensorflow/tfjs"));
-var import_supabase_js = require("@supabase/supabase-js"), import_jsx_dev_runtime10 = require("react/jsx-dev-runtime");
+var import_auth0_react7 = require("@auth0/auth0-react"), import_react6 = require("@remix-run/react"), tf = __toESM(require("@tensorflow/tfjs"));
+var import_jsx_dev_runtime10 = require("react/jsx-dev-runtime");
 async function loader4() {
-  var _a, _b, _c;
-  let supabase = (0, import_supabase_js.createClient)((_a = process.env.REACT_APP_SUPABASE_URL) == null ? void 0 : _a.toString(), (_b = process.env.REACT_APP_SUPABASE_ANON_KEY) == null ? void 0 : _b.toString()), { data } = await supabase.from("api_responses").select().eq("created_at", new Date().toDateString()), matches_return = JSON.parse("{}"), standings_return = JSON.parse("{}"), fantasty_stats_return = JSON.parse("{}"), already_exists = !1;
-  try {
-    already_exists = data[0].created_at == new Date().toDateString();
-  } catch {
-    already_exists = !1;
-  }
-  if (already_exists == !1) {
-    let options = {
-      method: "GET",
-      headers: {
-        "X-Auth-Token": (_c = process.env.PUBLIC_FOOTBALL_API_KEY) == null ? void 0 : _c.toString()
-      }
-    };
-    fantasty_stats_return = await (await fetch("https://fantasy.premierleague.com/api/bootstrap-static/")).json(), standings_return = await (await fetch("https://api.football-data.org/v4/competitions/PL/standings", options)).json(), matches_return = await (await fetch("https://api.football-data.org/v4/competitions/PL/matches", options)).json(), await supabase.from("api_responses").insert({ id: new Date().getTime(), created_at: new Date().toDateString(), fantasy_response: fantasty_stats_return, footballmatch_response: matches_return, footballstanding_response: standings_return });
-  } else
-    standings_return = data[0].footballstanding_response, matches_return = data[0].footballmatch_response, fantasty_stats_return = data[0].fantasy_response;
-  return (0, import_node4.json)({ date: new Date(), matches: matches_return, fantasy: fantasty_stats_return, standings: standings_return });
-}
-function sortFunctionHigh2(a, b) {
-  return new Date(a[1]) === new Date(b[1]) ? 0 : new Date(a[1]) > new Date(b[1]) ? -1 : 1;
-}
-function sortFunctionLow2(a, b) {
-  return new Date(a[1]) === new Date(b[1]) ? 0 : new Date(a[1]) < new Date(b[1]) ? -1 : 1;
+  return getInfo();
 }
 function Index2() {
   let load_data = (0, import_react6.useLoaderData)(), fixtures = [], results = [];
   for (let match in load_data.matches.matches)
     load_data.matches.matches[match].status.toUpperCase() == "FINISHED" ? results.push([load_data.matches.matches[match], load_data.matches.matches[match].utcDate]) : new Date() < new Date(load_data.matches.matches[match].utcDate) && fixtures.push([load_data.matches.matches[match], load_data.matches.matches[match].utcDate]);
-  fixtures = fixtures.sort(sortFunctionLow2), results = results.sort(sortFunctionHigh2);
+  fixtures = fixtures.sort(sortLow), results = results.sort(sortHigh);
   let overall_table = [];
   for (let team in load_data.standings.standings[0].table)
     overall_table.push(load_data.standings.standings[0].table[team]);
@@ -725,22 +713,22 @@ function Index2() {
   }, infectedPeople = [2, 5, 12, 30], infectedCountries = [1, 1, 4, 5], data = tf.tensor([infectedPeople[1], infectedCountries[1]]), prediction = predict(data), { isLoading, isAuthenticated, user } = (0, import_auth0_react7.useAuth0)(), sendparam = JSON.stringify({ auth: isAuthenticated, user });
   return isLoading ? /* @__PURE__ */ (0, import_jsx_dev_runtime10.jsxDEV)(import_jsx_dev_runtime10.Fragment, { children: /* @__PURE__ */ (0, import_jsx_dev_runtime10.jsxDEV)(Load, {}, void 0, !1, {
     fileName: "app/routes/index.tsx",
-    lineNumber: 113,
+    lineNumber: 55,
     columnNumber: 9
   }, this) }, void 0, !1, {
     fileName: "app/routes/index.tsx",
-    lineNumber: 112,
+    lineNumber: 54,
     columnNumber: 7
   }, this) : /* @__PURE__ */ (0, import_jsx_dev_runtime10.jsxDEV)(import_jsx_dev_runtime10.Fragment, { children: [
     /* @__PURE__ */ (0, import_jsx_dev_runtime10.jsxDEV)(Navbar, { params: sendparam }, void 0, !1, {
       fileName: "app/routes/index.tsx",
-      lineNumber: 119,
+      lineNumber: 61,
       columnNumber: 9
     }, this),
     /* @__PURE__ */ (0, import_jsx_dev_runtime10.jsxDEV)("div", { className: "hero bg-base-200 my-4", children: /* @__PURE__ */ (0, import_jsx_dev_runtime10.jsxDEV)("div", { className: "hero-content text-center", children: /* @__PURE__ */ (0, import_jsx_dev_runtime10.jsxDEV)("div", { className: "max-w-md", children: [
       /* @__PURE__ */ (0, import_jsx_dev_runtime10.jsxDEV)("img", { src: load_data.matches.competition.emblem, alt: "League Emblem", className: "m-auto justify-center w-40" }, void 0, !1, {
         fileName: "app/routes/index.tsx",
-        lineNumber: 123,
+        lineNumber: 65,
         columnNumber: 15
       }, this),
       /* @__PURE__ */ (0, import_jsx_dev_runtime10.jsxDEV)("h1", { className: "text-5xl font-bold", children: [
@@ -748,7 +736,7 @@ function Index2() {
         " Predictions"
       ] }, void 0, !0, {
         fileName: "app/routes/index.tsx",
-        lineNumber: 124,
+        lineNumber: 66,
         columnNumber: 15
       }, this),
       /* @__PURE__ */ (0, import_jsx_dev_runtime10.jsxDEV)("p", { className: "py-6", children: [
@@ -760,33 +748,33 @@ function Index2() {
         prediction.dataSync()[0]
       ] }, void 0, !0, {
         fileName: "app/routes/index.tsx",
-        lineNumber: 125,
+        lineNumber: 67,
         columnNumber: 15
       }, this)
     ] }, void 0, !0, {
       fileName: "app/routes/index.tsx",
-      lineNumber: 122,
+      lineNumber: 64,
       columnNumber: 13
     }, this) }, void 0, !1, {
       fileName: "app/routes/index.tsx",
-      lineNumber: 121,
+      lineNumber: 63,
       columnNumber: 11
     }, this) }, void 0, !1, {
       fileName: "app/routes/index.tsx",
-      lineNumber: 120,
+      lineNumber: 62,
       columnNumber: 9
     }, this),
     /* @__PURE__ */ (0, import_jsx_dev_runtime10.jsxDEV)("ul", { children: /* @__PURE__ */ (0, import_jsx_dev_runtime10.jsxDEV)("div", { className: "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3", children: [
       /* @__PURE__ */ (0, import_jsx_dev_runtime10.jsxDEV)("div", { children: [
         /* @__PURE__ */ (0, import_jsx_dev_runtime10.jsxDEV)("p", { className: "m-auto justify-center text-2xl font-semibold text-center", children: "Results" }, void 0, !1, {
           fileName: "app/routes/index.tsx",
-          lineNumber: 132,
+          lineNumber: 74,
           columnNumber: 15
         }, this),
         results.map((result) => /* @__PURE__ */ (0, import_jsx_dev_runtime10.jsxDEV)("li", { className: "grid grid-cols-3 my-4 max-w-xl m-auto", children: [
           /* @__PURE__ */ (0, import_jsx_dev_runtime10.jsxDEV)("img", { src: result[0].homeTeam.crest, alt: "Team Emblem", className: "m-auto justify-center w-10" }, void 0, !1, {
             fileName: "app/routes/index.tsx",
-            lineNumber: 135,
+            lineNumber: 77,
             columnNumber: 19
           }, this),
           /* @__PURE__ */ (0, import_jsx_dev_runtime10.jsxDEV)("div", { children: [
@@ -796,121 +784,121 @@ function Index2() {
               result[0].score.fullTime.away
             ] }, void 0, !0, {
               fileName: "app/routes/index.tsx",
-              lineNumber: 137,
+              lineNumber: 79,
               columnNumber: 21
             }, this),
             /* @__PURE__ */ (0, import_jsx_dev_runtime10.jsxDEV)("p", { className: "m-auto justify-center text-center", children: new Intl.DateTimeFormat("en-GB").format(new Date(result[1].toString())) }, void 0, !1, {
               fileName: "app/routes/index.tsx",
-              lineNumber: 138,
+              lineNumber: 80,
               columnNumber: 21
             }, this)
           ] }, void 0, !0, {
             fileName: "app/routes/index.tsx",
-            lineNumber: 136,
+            lineNumber: 78,
             columnNumber: 19
           }, this),
           /* @__PURE__ */ (0, import_jsx_dev_runtime10.jsxDEV)("img", { src: result[0].awayTeam.crest, alt: "Team Emblem", className: "m-auto justify-center w-10" }, void 0, !1, {
             fileName: "app/routes/index.tsx",
-            lineNumber: 140,
+            lineNumber: 82,
             columnNumber: 19
           }, this)
         ] }, result[0].id, !0, {
           fileName: "app/routes/index.tsx",
-          lineNumber: 134,
+          lineNumber: 76,
           columnNumber: 17
         }, this))
       ] }, void 0, !0, {
         fileName: "app/routes/index.tsx",
-        lineNumber: 131,
+        lineNumber: 73,
         columnNumber: 13
       }, this),
       /* @__PURE__ */ (0, import_jsx_dev_runtime10.jsxDEV)("div", { children: [
         /* @__PURE__ */ (0, import_jsx_dev_runtime10.jsxDEV)("p", { className: "m-auto justify-center text-2xl font-semibold text-center", children: "Fixtures" }, void 0, !1, {
           fileName: "app/routes/index.tsx",
-          lineNumber: 145,
+          lineNumber: 87,
           columnNumber: 15
         }, this),
         fixtures.map((fixture) => /* @__PURE__ */ (0, import_jsx_dev_runtime10.jsxDEV)("li", { className: "grid grid-cols-3 my-4 max-w-xl m-auto", children: [
           /* @__PURE__ */ (0, import_jsx_dev_runtime10.jsxDEV)("img", { src: fixture[0].homeTeam.crest, alt: "Team Emblem", className: "m-auto justify-center w-10" }, void 0, !1, {
             fileName: "app/routes/index.tsx",
-            lineNumber: 148,
+            lineNumber: 90,
             columnNumber: 19
           }, this),
           /* @__PURE__ */ (0, import_jsx_dev_runtime10.jsxDEV)("div", { children: [
             /* @__PURE__ */ (0, import_jsx_dev_runtime10.jsxDEV)("p", { className: "m-auto justify-center text-center", children: " - " }, void 0, !1, {
               fileName: "app/routes/index.tsx",
-              lineNumber: 150,
+              lineNumber: 92,
               columnNumber: 21
             }, this),
             /* @__PURE__ */ (0, import_jsx_dev_runtime10.jsxDEV)("p", { className: "m-auto justify-center text-center", children: new Intl.DateTimeFormat("en-GB").format(new Date(fixture[1].toString())) }, void 0, !1, {
               fileName: "app/routes/index.tsx",
-              lineNumber: 151,
+              lineNumber: 93,
               columnNumber: 21
             }, this)
           ] }, void 0, !0, {
             fileName: "app/routes/index.tsx",
-            lineNumber: 149,
+            lineNumber: 91,
             columnNumber: 19
           }, this),
           /* @__PURE__ */ (0, import_jsx_dev_runtime10.jsxDEV)("img", { src: fixture[0].awayTeam.crest, alt: "Team Emblem", className: "m-auto justify-center w-10" }, void 0, !1, {
             fileName: "app/routes/index.tsx",
-            lineNumber: 153,
+            lineNumber: 95,
             columnNumber: 19
           }, this)
         ] }, fixture[0].id, !0, {
           fileName: "app/routes/index.tsx",
-          lineNumber: 147,
+          lineNumber: 89,
           columnNumber: 17
         }, this))
       ] }, void 0, !0, {
         fileName: "app/routes/index.tsx",
-        lineNumber: 144,
+        lineNumber: 86,
         columnNumber: 13
       }, this),
       /* @__PURE__ */ (0, import_jsx_dev_runtime10.jsxDEV)("div", { children: [
         /* @__PURE__ */ (0, import_jsx_dev_runtime10.jsxDEV)("p", { className: "m-auto justify-center text-2xl font-semibold text-center", children: "Table" }, void 0, !1, {
           fileName: "app/routes/index.tsx",
-          lineNumber: 158,
+          lineNumber: 100,
           columnNumber: 15
         }, this),
         overall_table.map((pos) => /* @__PURE__ */ (0, import_jsx_dev_runtime10.jsxDEV)("li", { className: "grid grid-cols-3 my-4 max-w-xl m-auto", children: [
           /* @__PURE__ */ (0, import_jsx_dev_runtime10.jsxDEV)("p", { className: "m-auto justify-center", children: pos.position }, void 0, !1, {
             fileName: "app/routes/index.tsx",
-            lineNumber: 161,
+            lineNumber: 103,
             columnNumber: 19
           }, this),
           /* @__PURE__ */ (0, import_jsx_dev_runtime10.jsxDEV)("img", { src: pos.team.crest, alt: "Team Emblem", className: "m-auto justify-center w-10" }, void 0, !1, {
             fileName: "app/routes/index.tsx",
-            lineNumber: 162,
+            lineNumber: 104,
             columnNumber: 19
           }, this),
           /* @__PURE__ */ (0, import_jsx_dev_runtime10.jsxDEV)("p", { className: "m-auto justify-center", children: pos.points }, void 0, !1, {
             fileName: "app/routes/index.tsx",
-            lineNumber: 163,
+            lineNumber: 105,
             columnNumber: 19
           }, this)
         ] }, pos.team.id, !0, {
           fileName: "app/routes/index.tsx",
-          lineNumber: 160,
+          lineNumber: 102,
           columnNumber: 17
         }, this))
       ] }, void 0, !0, {
         fileName: "app/routes/index.tsx",
-        lineNumber: 157,
+        lineNumber: 99,
         columnNumber: 13
       }, this)
     ] }, void 0, !0, {
       fileName: "app/routes/index.tsx",
-      lineNumber: 130,
+      lineNumber: 72,
       columnNumber: 11
     }, this) }, void 0, !1, {
       fileName: "app/routes/index.tsx",
-      lineNumber: 129,
+      lineNumber: 71,
       columnNumber: 9
     }, this)
   ] }, void 0, !0, {
     fileName: "app/routes/index.tsx",
-    lineNumber: 118,
+    lineNumber: 60,
     columnNumber: 7
   }, this);
 }
@@ -921,17 +909,10 @@ __export(table_exports, {
   default: () => Table,
   loader: () => loader5
 });
-var import_auth0_react8 = require("@auth0/auth0-react"), import_node5 = require("@remix-run/node"), import_react7 = require("@remix-run/react");
+var import_auth0_react8 = require("@auth0/auth0-react"), import_react7 = require("@remix-run/react");
 var import_jsx_dev_runtime11 = require("react/jsx-dev-runtime");
 async function loader5() {
-  var _a;
-  let options = {
-    method: "GET",
-    headers: {
-      "X-Auth-Token": (_a = process.env.PUBLIC_FOOTBALL_API_KEY) == null ? void 0 : _a.toString()
-    }
-  }, fantasty_stats_return = await (await fetch("https://fantasy.premierleague.com/api/bootstrap-static/")).json(), standings_return = await (await fetch("https://api.football-data.org/v4/competitions/PL/standings", options)).json(), matches_return = await (await fetch("https://api.football-data.org/v4/competitions/PL/matches", options)).json();
-  return (0, import_node5.json)({ date: new Date(), matches: matches_return, fantasy: fantasty_stats_return, standings: standings_return });
+  return getInfo();
 }
 function Table() {
   let load_data = (0, import_react7.useLoaderData)();
@@ -942,126 +923,126 @@ function Table() {
   let { isLoading, isAuthenticated, user } = (0, import_auth0_react8.useAuth0)(), sendparam = JSON.stringify({ auth: isAuthenticated, user });
   return isLoading ? /* @__PURE__ */ (0, import_jsx_dev_runtime11.jsxDEV)(import_jsx_dev_runtime11.Fragment, { children: /* @__PURE__ */ (0, import_jsx_dev_runtime11.jsxDEV)(Load, {}, void 0, !1, {
     fileName: "app/routes/table.tsx",
-    lineNumber: 44,
+    lineNumber: 30,
     columnNumber: 9
   }, this) }, void 0, !1, {
     fileName: "app/routes/table.tsx",
-    lineNumber: 43,
+    lineNumber: 29,
     columnNumber: 7
   }, this) : /* @__PURE__ */ (0, import_jsx_dev_runtime11.jsxDEV)(import_jsx_dev_runtime11.Fragment, { children: [
     /* @__PURE__ */ (0, import_jsx_dev_runtime11.jsxDEV)(Navbar, { params: sendparam }, void 0, !1, {
       fileName: "app/routes/table.tsx",
-      lineNumber: 51,
+      lineNumber: 37,
       columnNumber: 9
     }, this),
     /* @__PURE__ */ (0, import_jsx_dev_runtime11.jsxDEV)("ul", { children: /* @__PURE__ */ (0, import_jsx_dev_runtime11.jsxDEV)("div", { className: "max-w-6xl m-auto mt-10", children: [
       /* @__PURE__ */ (0, import_jsx_dev_runtime11.jsxDEV)("p", { className: "m-auto justify-center text-2xl font-semibold text-center", children: "Table" }, void 0, !1, {
         fileName: "app/routes/table.tsx",
-        lineNumber: 54,
+        lineNumber: 40,
         columnNumber: 15
       }, this),
       /* @__PURE__ */ (0, import_jsx_dev_runtime11.jsxDEV)("li", { className: "grid grid-cols-6 my-4 m-auto", children: [
         /* @__PURE__ */ (0, import_jsx_dev_runtime11.jsxDEV)("p", { className: "m-auto justify-center text-center", children: "Position" }, void 0, !1, {
           fileName: "app/routes/table.tsx",
-          lineNumber: 56,
+          lineNumber: 42,
           columnNumber: 21
         }, this),
         /* @__PURE__ */ (0, import_jsx_dev_runtime11.jsxDEV)("p", { className: "m-auto justify-center text-center", children: "Team" }, void 0, !1, {
           fileName: "app/routes/table.tsx",
-          lineNumber: 57,
+          lineNumber: 43,
           columnNumber: 21
         }, this),
         /* @__PURE__ */ (0, import_jsx_dev_runtime11.jsxDEV)("p", { className: "m-auto justify-center text-center", children: "Name" }, void 0, !1, {
           fileName: "app/routes/table.tsx",
-          lineNumber: 58,
+          lineNumber: 44,
           columnNumber: 21
         }, this),
         /* @__PURE__ */ (0, import_jsx_dev_runtime11.jsxDEV)("p", { className: "m-auto justify-center text-center", children: "Played" }, void 0, !1, {
           fileName: "app/routes/table.tsx",
-          lineNumber: 59,
+          lineNumber: 45,
           columnNumber: 21
         }, this),
         /* @__PURE__ */ (0, import_jsx_dev_runtime11.jsxDEV)("p", { className: "m-auto justify-center text-center", children: "Points" }, void 0, !1, {
           fileName: "app/routes/table.tsx",
-          lineNumber: 60,
+          lineNumber: 46,
           columnNumber: 21
         }, this),
         /* @__PURE__ */ (0, import_jsx_dev_runtime11.jsxDEV)("p", { className: "m-auto justify-center text-center", children: "Form" }, void 0, !1, {
           fileName: "app/routes/table.tsx",
-          lineNumber: 61,
+          lineNumber: 47,
           columnNumber: 21
         }, this)
       ] }, void 0, !0, {
         fileName: "app/routes/table.tsx",
-        lineNumber: 55,
+        lineNumber: 41,
         columnNumber: 17
       }, this),
       overall_table.map((pos) => /* @__PURE__ */ (0, import_jsx_dev_runtime11.jsxDEV)("li", { className: "grid grid-cols-6 my-4 m-auto", children: [
         /* @__PURE__ */ (0, import_jsx_dev_runtime11.jsxDEV)("p", { className: "m-auto justify-center text-center", children: pos.position }, void 0, !1, {
           fileName: "app/routes/table.tsx",
-          lineNumber: 65,
+          lineNumber: 51,
           columnNumber: 21
         }, this),
         /* @__PURE__ */ (0, import_jsx_dev_runtime11.jsxDEV)("img", { src: pos.team.crest, alt: "Team Emblem", className: "m-auto justify-center w-10 text-center" }, void 0, !1, {
           fileName: "app/routes/table.tsx",
-          lineNumber: 66,
+          lineNumber: 52,
           columnNumber: 21
         }, this),
         /* @__PURE__ */ (0, import_jsx_dev_runtime11.jsxDEV)("p", { className: "m-auto justify-center text-center", children: pos.team.name }, void 0, !1, {
           fileName: "app/routes/table.tsx",
-          lineNumber: 67,
+          lineNumber: 53,
           columnNumber: 21
         }, this),
         /* @__PURE__ */ (0, import_jsx_dev_runtime11.jsxDEV)("p", { className: "m-auto justify-center text-center", children: pos.playedGames }, void 0, !1, {
           fileName: "app/routes/table.tsx",
-          lineNumber: 68,
+          lineNumber: 54,
           columnNumber: 21
         }, this),
         /* @__PURE__ */ (0, import_jsx_dev_runtime11.jsxDEV)("p", { className: "m-auto justify-center text-center", children: pos.points }, void 0, !1, {
           fileName: "app/routes/table.tsx",
-          lineNumber: 69,
+          lineNumber: 55,
           columnNumber: 21
         }, this),
         /* @__PURE__ */ (0, import_jsx_dev_runtime11.jsxDEV)("div", { className: "flex m-auto", children: pos.form.split(",").map((wdl) => (() => wdl.toString() == "W" ? /* @__PURE__ */ (0, import_jsx_dev_runtime11.jsxDEV)("p", { className: "justify-center text-center p-2 m-1 w-12 bg-green-500 rounded-full", children: wdl }, pos.form, !1, {
           fileName: "app/routes/table.tsx",
-          lineNumber: 74,
+          lineNumber: 60,
           columnNumber: 37
         }, this) : wdl.toString() == "D" ? /* @__PURE__ */ (0, import_jsx_dev_runtime11.jsxDEV)("p", { className: "justify-center text-center p-2 m-1 w-12 bg-slate-500 rounded-full", children: wdl }, pos.form, !1, {
           fileName: "app/routes/table.tsx",
-          lineNumber: 76,
+          lineNumber: 62,
           columnNumber: 37
         }, this) : /* @__PURE__ */ (0, import_jsx_dev_runtime11.jsxDEV)("p", { className: "justify-center text-center p-2 m-1 w-12 bg-red-500 rounded-full", children: wdl }, pos.form, !1, {
           fileName: "app/routes/table.tsx",
-          lineNumber: 78,
+          lineNumber: 64,
           columnNumber: 37
         }, this))()) }, void 0, !1, {
           fileName: "app/routes/table.tsx",
-          lineNumber: 70,
+          lineNumber: 56,
           columnNumber: 21
         }, this)
       ] }, pos.team.id, !0, {
         fileName: "app/routes/table.tsx",
-        lineNumber: 64,
+        lineNumber: 50,
         columnNumber: 19
       }, this))
     ] }, void 0, !0, {
       fileName: "app/routes/table.tsx",
-      lineNumber: 53,
+      lineNumber: 39,
       columnNumber: 13
     }, this) }, void 0, !1, {
       fileName: "app/routes/table.tsx",
-      lineNumber: 52,
+      lineNumber: 38,
       columnNumber: 9
     }, this)
   ] }, void 0, !0, {
     fileName: "app/routes/table.tsx",
-    lineNumber: 50,
+    lineNumber: 36,
     columnNumber: 7
   }, this);
 }
 
 // server-assets-manifest:@remix-run/dev/assets-manifest
-var assets_manifest_default = { version: "7a10b4df", entry: { module: "/build/entry.client-MTZEZ4NW.js", imports: ["/build/_shared/chunk-TF4HRXYO.js", "/build/_shared/chunk-4IYZMDEG.js"] }, routes: { root: { id: "root", parentId: void 0, path: "", index: void 0, caseSensitive: void 0, module: "/build/root-ESU2NI2T.js", imports: ["/build/_shared/chunk-FIBOST5T.js"], hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/fixtures": { id: "routes/fixtures", parentId: "root", path: "fixtures", index: void 0, caseSensitive: void 0, module: "/build/routes/fixtures-V5EYNKPJ.js", imports: ["/build/_shared/chunk-AKF7C3UG.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/index": { id: "routes/index", parentId: "root", path: void 0, index: !0, caseSensitive: void 0, module: "/build/routes/index-RCXSDXLK.js", imports: ["/build/_shared/chunk-AKF7C3UG.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/profile": { id: "routes/profile", parentId: "root", path: "profile", index: void 0, caseSensitive: void 0, module: "/build/routes/profile-QPS4HCGO.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/results": { id: "routes/results", parentId: "root", path: "results", index: void 0, caseSensitive: void 0, module: "/build/routes/results-DCAFWVK4.js", imports: ["/build/_shared/chunk-AKF7C3UG.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/table": { id: "routes/table", parentId: "root", path: "table", index: void 0, caseSensitive: void 0, module: "/build/routes/table-2HATYTMX.js", imports: ["/build/_shared/chunk-AKF7C3UG.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 } }, url: "/build/manifest-7A10B4DF.js" };
+var assets_manifest_default = { version: "03538b26", entry: { module: "/build/entry.client-MTZEZ4NW.js", imports: ["/build/_shared/chunk-TF4HRXYO.js", "/build/_shared/chunk-4IYZMDEG.js"] }, routes: { root: { id: "root", parentId: void 0, path: "", index: void 0, caseSensitive: void 0, module: "/build/root-ESU2NI2T.js", imports: ["/build/_shared/chunk-FIBOST5T.js"], hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/fixtures": { id: "routes/fixtures", parentId: "root", path: "fixtures", index: void 0, caseSensitive: void 0, module: "/build/routes/fixtures-NRAC4JJH.js", imports: ["/build/_shared/chunk-X4WGDLPQ.js", "/build/_shared/chunk-AKF7C3UG.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/index": { id: "routes/index", parentId: "root", path: void 0, index: !0, caseSensitive: void 0, module: "/build/routes/index-RN47EJ2I.js", imports: ["/build/_shared/chunk-X4WGDLPQ.js", "/build/_shared/chunk-AKF7C3UG.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/profile": { id: "routes/profile", parentId: "root", path: "profile", index: void 0, caseSensitive: void 0, module: "/build/routes/profile-QPS4HCGO.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/results": { id: "routes/results", parentId: "root", path: "results", index: void 0, caseSensitive: void 0, module: "/build/routes/results-XFCJDUYI.js", imports: ["/build/_shared/chunk-X4WGDLPQ.js", "/build/_shared/chunk-AKF7C3UG.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/table": { id: "routes/table", parentId: "root", path: "table", index: void 0, caseSensitive: void 0, module: "/build/routes/table-IYNIUJ7J.js", imports: ["/build/_shared/chunk-AKF7C3UG.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 } }, url: "/build/manifest-03538B26.js" };
 
 // server-entry-module:@remix-run/dev/server-build
 var assetsBuildDirectory = "public\\build", future = { v2_meta: !1 }, publicPath = "/build/", entry = { module: entry_server_exports }, routes = {
