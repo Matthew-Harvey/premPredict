@@ -220,188 +220,188 @@ var import_auth0_react3 = require("@auth0/auth0-react"), import_jsx_dev_runtime5
 var import_jsx_dev_runtime6 = require("react/jsx-dev-runtime");
 function Navbar({ params }) {
   let param = JSON.parse(params);
-  return console.log(param.user, param.auth), /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)("div", { className: "navbar sticky top-0 bg-white z-50", children: [
+  return /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)("div", { className: "navbar sticky top-0 bg-white z-50", children: [
     /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)("div", { className: "navbar-start", children: [
       /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)("div", { className: "dropdown", children: [
         /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)("label", { tabIndex: 0, className: "btn btn-ghost lg:hidden", children: /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)("svg", { xmlns: "http://www.w3.org/2000/svg", className: "h-5 w-5", fill: "none", viewBox: "0 0 24 24", stroke: "currentColor", children: /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)("path", { strokeLinecap: "round", strokeLinejoin: "round", strokeWidth: "2", d: "M4 6h16M4 12h8m-8 6h16" }, void 0, !1, {
           fileName: "app/comps/nav.tsx",
-          lineNumber: 13,
+          lineNumber: 12,
           columnNumber: 131
         }, this) }, void 0, !1, {
           fileName: "app/comps/nav.tsx",
-          lineNumber: 13,
+          lineNumber: 12,
           columnNumber: 17
         }, this) }, void 0, !1, {
           fileName: "app/comps/nav.tsx",
-          lineNumber: 12,
+          lineNumber: 11,
           columnNumber: 15
         }, this),
         /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)("ul", { tabIndex: 0, className: "menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52", children: [
           /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)("li", { children: /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)("button", { className: "btn btn-ghost", children: /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)("a", { href: "/predict", children: "Predict" }, void 0, !1, {
             fileName: "app/comps/nav.tsx",
-            lineNumber: 16,
+            lineNumber: 15,
             columnNumber: 55
           }, this) }, void 0, !1, {
             fileName: "app/comps/nav.tsx",
-            lineNumber: 16,
+            lineNumber: 15,
             columnNumber: 21
           }, this) }, void 0, !1, {
             fileName: "app/comps/nav.tsx",
-            lineNumber: 16,
+            lineNumber: 15,
             columnNumber: 17
           }, this),
           /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)("li", { children: /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)("button", { className: "btn btn-ghost", children: /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)("a", { href: "/fixtures", children: "Fixtures" }, void 0, !1, {
             fileName: "app/comps/nav.tsx",
-            lineNumber: 17,
+            lineNumber: 16,
             columnNumber: 55
           }, this) }, void 0, !1, {
             fileName: "app/comps/nav.tsx",
-            lineNumber: 17,
+            lineNumber: 16,
             columnNumber: 21
           }, this) }, void 0, !1, {
             fileName: "app/comps/nav.tsx",
-            lineNumber: 17,
+            lineNumber: 16,
             columnNumber: 17
           }, this),
           /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)("li", { children: /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)("button", { className: "btn btn-ghost", children: /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)("a", { href: "/results", children: "Results" }, void 0, !1, {
             fileName: "app/comps/nav.tsx",
-            lineNumber: 18,
+            lineNumber: 17,
             columnNumber: 55
           }, this) }, void 0, !1, {
             fileName: "app/comps/nav.tsx",
-            lineNumber: 18,
+            lineNumber: 17,
             columnNumber: 21
           }, this) }, void 0, !1, {
             fileName: "app/comps/nav.tsx",
-            lineNumber: 18,
+            lineNumber: 17,
             columnNumber: 17
           }, this),
           /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)("li", { children: /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)("button", { className: "btn btn-ghost", children: /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)("a", { href: "/table", children: "Table" }, void 0, !1, {
             fileName: "app/comps/nav.tsx",
-            lineNumber: 19,
+            lineNumber: 18,
             columnNumber: 55
           }, this) }, void 0, !1, {
             fileName: "app/comps/nav.tsx",
-            lineNumber: 19,
+            lineNumber: 18,
             columnNumber: 21
           }, this) }, void 0, !1, {
             fileName: "app/comps/nav.tsx",
-            lineNumber: 19,
+            lineNumber: 18,
             columnNumber: 17
           }, this)
         ] }, void 0, !0, {
           fileName: "app/comps/nav.tsx",
-          lineNumber: 15,
+          lineNumber: 14,
           columnNumber: 15
         }, this)
       ] }, void 0, !0, {
         fileName: "app/comps/nav.tsx",
-        lineNumber: 11,
+        lineNumber: 10,
         columnNumber: 13
       }, this),
       /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)("a", { className: "btn btn-ghost normal-case text-xl", href: "/", children: "premPredict" }, void 0, !1, {
         fileName: "app/comps/nav.tsx",
-        lineNumber: 22,
+        lineNumber: 21,
         columnNumber: 13
       }, this)
     ] }, void 0, !0, {
       fileName: "app/comps/nav.tsx",
-      lineNumber: 10,
+      lineNumber: 9,
       columnNumber: 11
     }, this),
     /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)("div", { className: "navbar-center hidden lg:flex", children: /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)("ul", { className: "menu menu-horizontal px-1", children: [
       /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)("li", { children: /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)("button", { className: "btn btn-ghost", children: /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)("a", { href: "/predict", children: "Predict" }, void 0, !1, {
         fileName: "app/comps/nav.tsx",
-        lineNumber: 26,
+        lineNumber: 25,
         columnNumber: 55
       }, this) }, void 0, !1, {
         fileName: "app/comps/nav.tsx",
-        lineNumber: 26,
+        lineNumber: 25,
         columnNumber: 21
       }, this) }, void 0, !1, {
         fileName: "app/comps/nav.tsx",
-        lineNumber: 26,
+        lineNumber: 25,
         columnNumber: 17
       }, this),
       /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)("li", { children: /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)("button", { className: "btn btn-ghost", children: /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)("a", { href: "/fixtures", children: "Fixtures" }, void 0, !1, {
         fileName: "app/comps/nav.tsx",
-        lineNumber: 27,
+        lineNumber: 26,
         columnNumber: 55
       }, this) }, void 0, !1, {
         fileName: "app/comps/nav.tsx",
-        lineNumber: 27,
+        lineNumber: 26,
         columnNumber: 21
       }, this) }, void 0, !1, {
         fileName: "app/comps/nav.tsx",
-        lineNumber: 27,
+        lineNumber: 26,
         columnNumber: 17
       }, this),
       /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)("li", { children: /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)("button", { className: "btn btn-ghost", children: /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)("a", { href: "/results", children: "Results" }, void 0, !1, {
         fileName: "app/comps/nav.tsx",
-        lineNumber: 28,
+        lineNumber: 27,
         columnNumber: 55
       }, this) }, void 0, !1, {
         fileName: "app/comps/nav.tsx",
-        lineNumber: 28,
+        lineNumber: 27,
         columnNumber: 21
       }, this) }, void 0, !1, {
         fileName: "app/comps/nav.tsx",
-        lineNumber: 28,
+        lineNumber: 27,
         columnNumber: 17
       }, this),
       /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)("li", { children: /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)("button", { className: "btn btn-ghost", children: /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)("a", { href: "/table", children: "Table" }, void 0, !1, {
         fileName: "app/comps/nav.tsx",
-        lineNumber: 29,
+        lineNumber: 28,
         columnNumber: 55
       }, this) }, void 0, !1, {
         fileName: "app/comps/nav.tsx",
-        lineNumber: 29,
+        lineNumber: 28,
         columnNumber: 21
       }, this) }, void 0, !1, {
         fileName: "app/comps/nav.tsx",
-        lineNumber: 29,
+        lineNumber: 28,
         columnNumber: 17
       }, this)
     ] }, void 0, !0, {
       fileName: "app/comps/nav.tsx",
-      lineNumber: 25,
+      lineNumber: 24,
       columnNumber: 13
     }, this) }, void 0, !1, {
       fileName: "app/comps/nav.tsx",
-      lineNumber: 24,
+      lineNumber: 23,
       columnNumber: 11
     }, this),
     /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)("div", { className: "navbar-end", children: param.auth ? /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)("div", { className: "flex", children: [
       /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)("img", { src: param.user.picture, alt: "pfp", className: "rounded-full m-2 w-8 h-8" }, void 0, !1, {
         fileName: "app/comps/nav.tsx",
-        lineNumber: 39,
+        lineNumber: 38,
         columnNumber: 23
       }, this),
       /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)(logoutbutton_default, {}, void 0, !1, {
         fileName: "app/comps/nav.tsx",
-        lineNumber: 40,
+        lineNumber: 39,
         columnNumber: 23
       }, this)
     ] }, void 0, !0, {
       fileName: "app/comps/nav.tsx",
-      lineNumber: 38,
+      lineNumber: 37,
       columnNumber: 19
     }, this) : /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)("div", { children: /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)(loginbutton_default, {}, void 0, !1, {
       fileName: "app/comps/nav.tsx",
-      lineNumber: 35,
+      lineNumber: 34,
       columnNumber: 21
     }, this) }, void 0, !1, {
       fileName: "app/comps/nav.tsx",
-      lineNumber: 34,
+      lineNumber: 33,
       columnNumber: 19
     }, this) }, void 0, !1, {
       fileName: "app/comps/nav.tsx",
-      lineNumber: 32,
+      lineNumber: 31,
       columnNumber: 11
     }, this)
   ] }, void 0, !0, {
     fileName: "app/comps/nav.tsx",
-    lineNumber: 9,
+    lineNumber: 8,
     columnNumber: 9
   }, this);
 }
@@ -443,9 +443,7 @@ async function loader() {
   return getInfo();
 }
 function Index() {
-  let load_data = (0, import_react3.useLoaderData)();
-  console.log(load_data);
-  let fixtures = [];
+  let load_data = (0, import_react3.useLoaderData)(), fixtures = [];
   for (let match in load_data.matches.matches)
     new Date() < new Date(load_data.matches.matches[match].utcDate) && fixtures.push([load_data.matches.matches[match], load_data.matches.matches[match].utcDate]);
   fixtures = fixtures.sort(sortLow);
@@ -605,9 +603,7 @@ async function loader3() {
   return getInfo();
 }
 function Results() {
-  let load_data = (0, import_react5.useLoaderData)();
-  console.log(load_data);
-  let results = [];
+  let load_data = (0, import_react5.useLoaderData)(), results = [];
   for (let match in load_data.matches.matches)
     load_data.matches.matches[match].status.toUpperCase() == "FINISHED" && results.push([load_data.matches.matches[match], load_data.matches.matches[match].utcDate]);
   results = results.sort(sortHigh);
@@ -915,9 +911,7 @@ async function loader5() {
   return getInfo();
 }
 function Table() {
-  let load_data = (0, import_react7.useLoaderData)();
-  console.log(load_data);
-  let overall_table = [];
+  let load_data = (0, import_react7.useLoaderData)(), overall_table = [];
   for (let team in load_data.standings.standings[0].table)
     console.log(load_data.standings.standings[0].table[team]), overall_table.push(load_data.standings.standings[0].table[team]);
   let { isLoading, isAuthenticated, user } = (0, import_auth0_react8.useAuth0)(), sendparam = JSON.stringify({ auth: isAuthenticated, user });
@@ -1042,7 +1036,7 @@ function Table() {
 }
 
 // server-assets-manifest:@remix-run/dev/assets-manifest
-var assets_manifest_default = { version: "03538b26", entry: { module: "/build/entry.client-MTZEZ4NW.js", imports: ["/build/_shared/chunk-TF4HRXYO.js", "/build/_shared/chunk-4IYZMDEG.js"] }, routes: { root: { id: "root", parentId: void 0, path: "", index: void 0, caseSensitive: void 0, module: "/build/root-ESU2NI2T.js", imports: ["/build/_shared/chunk-FIBOST5T.js"], hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/fixtures": { id: "routes/fixtures", parentId: "root", path: "fixtures", index: void 0, caseSensitive: void 0, module: "/build/routes/fixtures-NRAC4JJH.js", imports: ["/build/_shared/chunk-X4WGDLPQ.js", "/build/_shared/chunk-AKF7C3UG.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/index": { id: "routes/index", parentId: "root", path: void 0, index: !0, caseSensitive: void 0, module: "/build/routes/index-RN47EJ2I.js", imports: ["/build/_shared/chunk-X4WGDLPQ.js", "/build/_shared/chunk-AKF7C3UG.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/profile": { id: "routes/profile", parentId: "root", path: "profile", index: void 0, caseSensitive: void 0, module: "/build/routes/profile-QPS4HCGO.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/results": { id: "routes/results", parentId: "root", path: "results", index: void 0, caseSensitive: void 0, module: "/build/routes/results-XFCJDUYI.js", imports: ["/build/_shared/chunk-X4WGDLPQ.js", "/build/_shared/chunk-AKF7C3UG.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/table": { id: "routes/table", parentId: "root", path: "table", index: void 0, caseSensitive: void 0, module: "/build/routes/table-IYNIUJ7J.js", imports: ["/build/_shared/chunk-AKF7C3UG.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 } }, url: "/build/manifest-03538B26.js" };
+var assets_manifest_default = { version: "a223359d", entry: { module: "/build/entry.client-MTZEZ4NW.js", imports: ["/build/_shared/chunk-TF4HRXYO.js", "/build/_shared/chunk-4IYZMDEG.js"] }, routes: { root: { id: "root", parentId: void 0, path: "", index: void 0, caseSensitive: void 0, module: "/build/root-ESU2NI2T.js", imports: ["/build/_shared/chunk-FIBOST5T.js"], hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/fixtures": { id: "routes/fixtures", parentId: "root", path: "fixtures", index: void 0, caseSensitive: void 0, module: "/build/routes/fixtures-DWE43ESX.js", imports: ["/build/_shared/chunk-X4WGDLPQ.js", "/build/_shared/chunk-FJOLJIZ5.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/index": { id: "routes/index", parentId: "root", path: void 0, index: !0, caseSensitive: void 0, module: "/build/routes/index-66PURZIT.js", imports: ["/build/_shared/chunk-X4WGDLPQ.js", "/build/_shared/chunk-FJOLJIZ5.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/profile": { id: "routes/profile", parentId: "root", path: "profile", index: void 0, caseSensitive: void 0, module: "/build/routes/profile-QPS4HCGO.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/results": { id: "routes/results", parentId: "root", path: "results", index: void 0, caseSensitive: void 0, module: "/build/routes/results-GJYN2EQF.js", imports: ["/build/_shared/chunk-X4WGDLPQ.js", "/build/_shared/chunk-FJOLJIZ5.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/table": { id: "routes/table", parentId: "root", path: "table", index: void 0, caseSensitive: void 0, module: "/build/routes/table-ESSAZYCW.js", imports: ["/build/_shared/chunk-FJOLJIZ5.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 } }, url: "/build/manifest-A223359D.js" };
 
 // server-entry-module:@remix-run/dev/server-build
 var assetsBuildDirectory = "public\\build", future = { v2_meta: !1 }, publicPath = "/build/", entry = { module: entry_server_exports }, routes = {

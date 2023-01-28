@@ -4,7 +4,6 @@ import LogoutButton from "./logoutbutton";
 // @ts-ignore 
 export default function Navbar({params}) {
     let param = JSON.parse(params);
-    console.log(param.user, param.auth);
     return (
         <div className="navbar sticky top-0 bg-white z-50">
           <div className="navbar-start">
