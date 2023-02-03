@@ -1,15 +1,13 @@
 
-import React from 'react';
+import { useUser } from '@auth0/nextjs-auth0/client';
 
 import LoginButton from './loginbutton';
 import LogoutButton from './logoutbutton';
 
-import { useAuth0 } from '@auth0/auth0-react';
-
 const AuthenticationButton = () => {
-  const { isAuthenticated } = useAuth0();
+  const { user } = useUser();
 
-  return isAuthenticated ? <LogoutButton /> : <LoginButton />;
+  return !user ? <LogoutButton /> : <LoginButton />;
 };
 
 export default AuthenticationButton;
