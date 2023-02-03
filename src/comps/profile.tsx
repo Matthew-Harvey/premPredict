@@ -10,7 +10,7 @@ const Profile = () => {
   }
 
   return (
-    user && (
+    user?.picture && user.name && (
       <div>
         <img src={user?.picture} alt={user?.name} />
         <h2>{user?.name}</h2>
