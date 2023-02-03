@@ -1,4 +1,3 @@
-import type { LoaderArgs } from '@remix-run/node';
 import { createClient } from '@supabase/supabase-js';
 
 // @ts-ignore
