@@ -7,9 +7,11 @@ import { getInfo } from "@/functions/loading";
 import { sortHigh } from "@/functions/sorting";
 import { useUser } from "@auth0/nextjs-auth0/client";
 
-export async function loader() {
-  let loading_function_return = getInfo();
-  return loading_function_return;
+export async function getServerSideProps(ctx : any) {
+  let loading_function_return = await getInfo();
+  return {
+    props: {"res" : loading_function_return}
+  }
 }
 
 export default function Results(res: any) {
