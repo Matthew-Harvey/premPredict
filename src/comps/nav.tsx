@@ -6,6 +6,7 @@ import Logout from "./logoutbutton";
 // @ts-ignore 
 export default function Navbar({params}) {
     let param = JSON.parse(params);
+    console.log(param.user);
     return (
         <div className="navbar sticky top-0 bg-white z-50 max-w-6xl m-auto">
           <div className="navbar-start">
@@ -37,7 +38,7 @@ export default function Navbar({params}) {
                   </div>
                 ) :
                   <div className="flex">
-                      <img src={param.user.picture} alt="pfp" className="rounded-full m-2 w-8 h-8" />
+                      <img src={param.user.picture} alt="pfp" className="rounded-full m-2 w-8 h-8 ring-1 ring-black" referrerPolicy="no-referrer" />
                       <Logout />
                   </div>
               }
